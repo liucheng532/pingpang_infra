@@ -1,0 +1,26 @@
+{
+  "local_only": true,
+  "remote_sync_applicable": false,
+  "reason": "Laptop simulation entrypoints only; no changes to independent deployed Yichao sources or device snapshots.",
+  "sources": {
+    "run.py": "d074dd9286effc6f751590bd16829e54b6b7347b8a9be4081143db3cf1961dc4",
+    "run.sh": "22d0c807dbaa8006a480b0e5568a96d915ff0f0f32eb1dada3bd08ca0bae6e11",
+    "check_result.py": "0c21fd38b7d2fc7583a65e6a128223a2a68262de05e89ddf387d42f136d9e127",
+    "README.md": "cdbcd4e8a668b6f42a5158094470c15afddb7688aad421a8613a1ae01d16111b",
+    "environment.freeze.txt": "0368fe1b9c4c4ca80de93c549c1e63b387affc9c0a1730b20030d874a840914b",
+    "environment.conda-explicit.txt": "7ae941ffbf66b951ec6fb2697b15a344f2ccdd0d58757111e08b8c52ebe418bd"
+  },
+  "worktrees": {
+    "planner": "e14fd5ba3daa6327ac842d53fe5c4292b04e5716",
+    "controller": "47359de28648243c14f1dcba05438ab76efc93c6"
+  },
+  "output_sha256": {
+    "outputs/actor199_24shots/v0_safe_rl_rollout.json": "94c9c457127873941599cd8490efad6640c30969e313a633fddab6061d29449f",
+    "outputs/actor199_24shots/assessment.json": "1cb3c7282b5feb5d27b2e79789b1126a1e622330b64888a8984a5408ef3bdd17",
+    "outputs/actor199_24shots/local_manifest.json": "d07a6cd008fc115ce750a4b4b071db9aa1038db76fe456700d1f3ce478cbe399",
+    "outputs/actor199_24shots/assessment.stdout.json": "1cb3c7282b5feb5d27b2e79789b1126a1e622330b64888a8984a5408ef3bdd17",
+    "outputs/actor199_24shots/v0_safe_rl_rollout.mp4": "4c26fa843700ccdbe7feacf82b40534dcc4156c28b17e53837dae029163f379a"
+  },
+  "exit_fix_verified": true,
+  "exit_fix_return_code": 0
+}

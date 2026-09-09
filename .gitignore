@@ -1,0 +1,15 @@
+# Local environments and generated runtime data
+.venv/
+__pycache__/
+*.py[cod]
+output/
+outputs/
+logs/
+*.log
+# External models, vendor snapshots, device copies and credentials
+assets/
+vendor/
+*.onnx
+*.pt
+.env
+AGENTS.private.md

@@ -1,0 +1,38 @@
+{
+  "implementation_scope": "source-backed V3 peer-clear, dynamic outward and explicit RETURN through frozen V9 scheduler; synthetic replay only",
+  "real_input_accepted": false,
+  "not_equivalent_to_training_relay": [
+    "Conservative adapter waits for stable prepare/return completion; training allows locomotion preemption and interval-based handoff.",
+    "Training FK hand/racket/TTC guards and real source coordinates/limits remain unverified; 85D ABI is not a substitute.",
+    "Projection uses frozen planner pure methods and controller@47359de motion pelvis/deadband conventions; exact dirty controller reference patch remains missing."
+  ],
+  "protocol_memory": "Capture first confirmed prepare target pair for the shot, matching V3 first protocol-applied capture; later peer-clear/RETURN targets are separately logged and do not overwrite actor memory.",
+  "feedback_schema": "yichao-v3-v9-feedback-v1",
+  "feedback_evidence": "simulated_scheduler",
+  "feedback_identity": [
+    "session",
+    "robot",
+    "sequence",
+    "shot",
+    "token",
+    "kind"
+  ],
+  "statuses": {
+    "accepted": "Frozen scheduler clone accepted and latched the request; not physical completion.",
+    "rejected": "Validation or scheduler rejected; offline batch has no applied side effects.",
+    "completed": "Matched target within 0.06m, fixture planar speed <=0.15m/s, hold phase for >=0.10s. Not real-world completion."
+  },
+  "atomicity": "Offline batch preview only. Distributed acceptance/partial execution must be handled by a future dedicated bridge; no distributed atomicity claimed.",
+  "failure": "Latch FAULT and issue no new commands. Existing scheduler motion is not stopped. Recovery requires a new explicit synthetic session; real reconciliation is not implemented.",
+  "return": "Explicit RETURN to projected next_hitter_return_y after both outward/peer-clear goals complete; repeat pending request until matched acceptance, then wait for stable completion.",
+  "hold": "No HOLD command is exposed. Existing fixed_relay hold is no-op, never a stop mechanism.",
+  "online_gate": "No ROS/LCM/device transport or active switch exists. Complete V3 relay semantic equivalence is an online blocker even after real input evidence is supplied.",
+  "implemented": [
+    "one-shot inference and prepare target latch",
+    "paired peer-clear + HIT commit",
+    "frozen V3 physical outward projection and runway guard",
+    "next-hitter return targets and frozen V3 return motion projection",
+    "matched per-robot RETURN acceptance and stable completion before next shot"
+  ],
+  "protocol_filter_boundary": "Frozen risk filter gates actor candidates once per shot, as in v0.step. Mid-shot protocol scores are diagnostic only, outside the filter calibration boundary; finite workspace/gap and frozen V3 motion projection guards apply. This is not real safety acceptance."
+}

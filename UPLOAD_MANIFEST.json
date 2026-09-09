@@ -1,0 +1,779 @@
+{
+  "purpose": "clean GitHub export of local Yichao adaptation work",
+  "source_workspace": "/home/lyz/Desktop/code/PingPong",
+  "file_count": 154,
+  "files": [
+    {
+      "destination": "doc/FIXED_VS_YICHAO_66_DIAGNOSIS_2026-09-10.md",
+      "source": "doc/FIXED_VS_YICHAO_66_DIAGNOSIS_2026-09-10.md",
+      "sha256": "e116d347048a5c1d76658c664ebe811e47fe262c269e298dabf45a3ab3a390e8"
+    },
+    {
+      "destination": "doc/YICHAO_ACTIVE_TRIAL_2026-09-09.md",
+      "source": "doc/YICHAO_ACTIVE_TRIAL_2026-09-09.md",
+      "sha256": "ef417d7c60f11881dd02806c7719be5c5f0c6d8fd059f979b01a5c9743f286be"
+    },
+    {
+      "destination": "doc/YICHAO_CONTINUOUS_PLANNER_2026-09-09.md",
+      "source": "doc/YICHAO_CONTINUOUS_PLANNER_2026-09-09.md",
+      "sha256": "0c420e636a47c3c25be3cd551597608319bad1e90a041c7dcdc95e5648125ef7"
+    },
+    {
+      "destination": "doc/YICHAO_DEFAULT_REFERENCE_AUDIT_2026-09-10.md",
+      "source": "doc/YICHAO_DEFAULT_REFERENCE_AUDIT_2026-09-10.md",
+      "sha256": "5f8f22c7537c446ae2a999b07f8a6b3d661126152c3e54b523afc6ef377fadfb"
+    },
+    {
+      "destination": "doc/YICHAO_DYNAMIC_HOME_CANDIDATE_2026-09-09.md",
+      "source": "doc/YICHAO_DYNAMIC_HOME_CANDIDATE_2026-09-09.md",
+      "sha256": "8ff6a9a35df7b6906a5217481f496a2c039622098dc312ba92075457eed13496"
+    },
+    {
+      "destination": "doc/YICHAO_FIRST_BALL_IDLE_2026-09-09.md",
+      "source": "doc/YICHAO_FIRST_BALL_IDLE_2026-09-09.md",
+      "sha256": "d8012c09f013da73873a4627bbbaafefd7ca6fce959fee88aa138a5c0b12b5f4"
+    },
+    {
+      "destination": "doc/YICHAO_FIXED_INTERFACE_ALIGNMENT_2026-09-08.md",
+      "source": "doc/YICHAO_FIXED_INTERFACE_ALIGNMENT_2026-09-08.md",
+      "sha256": "97c216b1c594acbaebec700ab484a426f35eab4d252837c8235da6c3f662983a"
+    },
+    {
+      "destination": "doc/YICHAO_FULL_RELAY_PROGRESS_2026-09-08.md",
+      "source": "doc/YICHAO_FULL_RELAY_PROGRESS_2026-09-08.md",
+      "sha256": "4ef2ae4dd31b2150bcec4ab7ba5d3f5773ba62eb38eac7ad3c1a6349ae6d3945"
+    },
+    {
+      "destination": "doc/YICHAO_HIT_SHADOW_2026-09-09.md",
+      "source": "doc/YICHAO_HIT_SHADOW_2026-09-09.md",
+      "sha256": "5caf2396ad15ebf38dec6f02936dd9fb4cfc9f5434027a0255d40464fee19271"
+    },
+    {
+      "destination": "doc/YICHAO_HOME_CANDIDATE_TRIAL_2026-09-10.md",
+      "source": "doc/YICHAO_HOME_CANDIDATE_TRIAL_2026-09-10.md",
+      "sha256": "2696f7b4517032495bd3158274c3759477c52da7153914ba271bf06fde50fb9b"
+    },
+    {
+      "destination": "doc/YICHAO_LIVE_INPUT_CAPTURE_2026-09-08.md",
+      "source": "doc/YICHAO_LIVE_INPUT_CAPTURE_2026-09-08.md",
+      "sha256": "4ddc46d631b2be2dbad80ab4dfa854214ccc1144bd1f21ad165ff404edfc8fdb"
+    },
+    {
+      "destination": "doc/YICHAO_LOCAL_SIM2SIM_2026-09-08.md",
+      "source": "doc/YICHAO_LOCAL_SIM2SIM_2026-09-08.md",
+      "sha256": "cbf1878edfd1519ee5d0bc6175d97dfdf80976b5b9f500ff38276a0fa1faa977"
+    },
+    {
+      "destination": "doc/YICHAO_MANUAL_START_CURRENT.md",
+      "source": "doc/YICHAO_MANUAL_START_CURRENT.md",
+      "sha256": "ebc67d4bef77b6e531005f55e69019fe196f4c8e82f89b8953d7468f9d6a901b"
+    },
+    {
+      "destination": "doc/YICHAO_ONBOARD_MOVEMENT_PROGRESS_2026-09-08.md",
+      "source": "doc/YICHAO_ONBOARD_MOVEMENT_PROGRESS_2026-09-08.md",
+      "sha256": "1c090b605ae1e3fad3437e46355091e1760d8e9850e7bf994c24d82d4fe3696c"
+    },
+    {
+      "destination": "doc/YICHAO_ONBOARD_SHADOW_2026-09-08_EVENING.md",
+      "source": "doc/YICHAO_ONBOARD_SHADOW_2026-09-08_EVENING.md",
+      "sha256": "b3940c81d16a319d0a8c319b3cc0fff8f43dcb82d17d39c907aeb102794d6d8e"
+    },
+    {
+      "destination": "doc/YICHAO_ORIGINAL_RESTART_2026-09-10.md",
+      "source": "doc/YICHAO_ORIGINAL_RESTART_2026-09-10.md",
+      "sha256": "aa8ca5316790bd435b30df4e5cbc4804715d151664cb8f26a18ee2ebc6795921"
+    },
+    {
+      "destination": "doc/YICHAO_PLAN_CODE_STATUS_2026-09-05.md",
+      "source": "doc/YICHAO_PLAN_CODE_STATUS_2026-09-05.md",
+      "sha256": "747016e3440b545688ef8cf851eb09e040c0f8b3b06c08e488976742ca2797e8"
+    },
+    {
+      "destination": "doc/YICHAO_PRECLEAN_2026-09-08.md",
+      "source": "doc/YICHAO_PRECLEAN_2026-09-08.md",
+      "sha256": "d2edf8d1af0a8669c050604dde4f2ec543208129aa235965150fb9b6ec2bde5c"
+    },
+    {
+      "destination": "doc/YICHAO_PREPARATION_2026-09-08_EVENING.md",
+      "source": "doc/YICHAO_PREPARATION_2026-09-08_EVENING.md",
+      "sha256": "bf66a086f62e5c86b73f610311d04600edc394eca9f9eb01bd1c2dcb8569688b"
+    },
+    {
+      "destination": "doc/YICHAO_RIGHT_FIRST_RESTART_2026-09-09.md",
+      "source": "doc/YICHAO_RIGHT_FIRST_RESTART_2026-09-09.md",
+      "sha256": "fe7188bcade3faf7b4c1f479747fcb95c327f96303af8a622e002884e5addfe8"
+    },
+    {
+      "destination": "doc/YICHAO_SHARED_CALIBRATION_FIX_2026-09-10.md",
+      "source": "doc/YICHAO_SHARED_CALIBRATION_FIX_2026-09-10.md",
+      "sha256": "cfab0976950ce5b7c27cad173ae2753898f39ec98dee11fd380c57fa855264a4"
+    },
+    {
+      "destination": "doc/YICHAO_V3_V9_BASELINE_2026-09-07.md",
+      "source": "doc/YICHAO_V3_V9_BASELINE_2026-09-07.md",
+      "sha256": "6fc5921e37cffb7c3f2517d8493dec7b5c68c33b9b924b25f6ae3c0f9eb5e68d"
+    },
+    {
+      "destination": "doc/YICHAO_V3_V9_PROGRESS_2026-09-07.md",
+      "source": "doc/YICHAO_V3_V9_PROGRESS_2026-09-07.md",
+      "sha256": "bc9cdd2474c9bb922ea0cf1ead3839c09c0d8c81612e5353480b3c1f71ebb45c"
+    },
+    {
+      "destination": "doc/YICHAO_V3_V9_RUNTIME_SHADOW_2026-09-07.md",
+      "source": "doc/YICHAO_V3_V9_RUNTIME_SHADOW_2026-09-07.md",
+      "sha256": "f22ea62e0e210644ef58b10ec1ee61723b44b2ed1605a9c67ff9825b6584fb37"
+    },
+    {
+      "destination": "doc/YICHAO_VALID_BALL_SHADOW_2026-09-09.md",
+      "source": "doc/YICHAO_VALID_BALL_SHADOW_2026-09-09.md",
+      "sha256": "2ad6eb844678deb8a9cf651498cd3d0549bbf5224bc4d08dcc513431797b71ae"
+    },
+    {
+      "destination": "doc/yichao_v3_v9/IMPLEMENTATION_REPORT.md",
+      "source": "doc/yichao_v3_v9/IMPLEMENTATION_REPORT.md",
+      "sha256": "9e43d6d8d0ee253bb0d09245ca398fc8f2948ff7bd07b87350f25a6f47bbbd1d"
+    },
+    {
+      "destination": "local_sim2sim/README.md",
+      "source": "local_sim2sim/README.md",
+      "sha256": "cdbcd4e8a668b6f42a5158094470c15afddb7688aad421a8613a1ae01d16111b"
+    },
+    {
+      "destination": "local_sim2sim/check_result.py",
+      "source": "local_sim2sim/check_result.py",
+      "sha256": "0c21fd38b7d2fc7583a65e6a128223a2a68262de05e89ddf387d42f136d9e127"
+    },
+    {
+      "destination": "local_sim2sim/environment.conda-explicit.txt",
+      "source": "local_sim2sim/environment.conda-explicit.txt",
+      "sha256": "7ae941ffbf66b951ec6fb2697b15a344f2ccdd0d58757111e08b8c52ebe418bd"
+    },
+    {
+      "destination": "local_sim2sim/environment.freeze.txt",
+      "source": "local_sim2sim/environment.freeze.txt",
+      "sha256": "0368fe1b9c4c4ca80de93c549c1e63b387affc9c0a1730b20030d874a840914b"
+    },
+    {
+      "destination": "local_sim2sim/run.py",
+      "source": "local_sim2sim/run.py",
+      "sha256": "d074dd9286effc6f751590bd16829e54b6b7347b8a9be4081143db3cf1961dc4"
+    },
+    {
+      "destination": "local_sim2sim/run.sh",
+      "source": "local_sim2sim/run.sh",
+      "sha256": "22d0c807dbaa8006a480b0e5568a96d915ff0f0f32eb1dada3bd08ca0bae6e11"
+    },
+    {
+      "destination": "local_sim2sim/setup_manifest.json",
+      "source": "local_sim2sim/setup_manifest.json",
+      "sha256": "33697e6aaba7bb83a993affdc49ebcae7571616beb65fcde65e5dacf3d8ff4b8"
+    },
+    {
+      "destination": "tools/device_context_capture.py",
+      "source": "tools/device_context_capture.py",
+      "sha256": "25acdac457288b5090eac243d5fca6a660bf46331e9018f51530850b9219d77b"
+    },
+    {
+      "destination": "tools/device_context_config.json",
+      "source": "tools/device_context_config.json",
+      "sha256": "e3ade01061c51dd5e1ab3c62e63cf6daaa925a42b0a59a85f0da09c401c0fdd9"
+    },
+    {
+      "destination": "tools/device_context_hash_remote.py",
+      "source": "tools/device_context_hash_remote.py",
+      "sha256": "47258cc7d1bbcf87145415c2eaacf351017fb8e4a55d05434dceffd731311eb4"
+    },
+    {
+      "destination": "tools/device_context_index.py",
+      "source": "tools/device_context_index.py",
+      "sha256": "fe122b7165ac43e1ad00a1c579525e8ed7c26d01ea0c759ce58d1a59008b6a05"
+    },
+    {
+      "destination": "tools/device_context_inventory_remote.py",
+      "source": "tools/device_context_inventory_remote.py",
+      "sha256": "aea1c9d96223b30cfd26bfba0b44a4eddf50802874203ab417efd73f8a973664"
+    },
+    {
+      "destination": "tools/device_context_pull.py",
+      "source": "tools/device_context_pull.py",
+      "sha256": "dfa592ac2d64c817a6e05b485785e2b57084a5dc7033cf689f0b98e6c072c99c"
+    },
+    {
+      "destination": "tools/device_context_seed.py",
+      "source": "tools/device_context_seed.py",
+      "sha256": "65bb355c751b045e45940ed8e317222cc1d613cd8da43279d2cd1842cab06a78"
+    },
+    {
+      "destination": "tools/device_context_ssh.py",
+      "source": "tools/device_context_ssh.py",
+      "sha256": "33179ada975d7f30e2b85e8cfea522af405d31b45259dc4188ecec72cdc82a08"
+    },
+    {
+      "destination": "tools/device_context_verify.py",
+      "source": "tools/device_context_verify.py",
+      "sha256": "25de286135a632836d7731bb8d7ac4113477269e00520dfe2e5e13c352b1b16b"
+    },
+    {
+      "destination": "yichao_v3_v9/.gitignore",
+      "source": "yichao_v3_v9/.gitignore",
+      "sha256": "f4dd3e0ec7e41f2f86deecf8715f1184eb6dc787bd224c3759a7caf39f24c81f"
+    },
+    {
+      "destination": "yichao_v3_v9/README.md",
+      "source": "yichao_v3_v9/README.md",
+      "sha256": "87c4c016685ad990c88cacb58e6179acceeb98306a77b362a8bb3baa2d178d57"
+    },
+    {
+      "destination": "yichao_v3_v9/WORKSTATION_START.md",
+      "source": "yichao_v3_v9/WORKSTATION_START.md",
+      "sha256": "1b295124a33ccea94a9e04fe1654e51fecab027a627f8d651163a1efcb116240"
+    },
+    {
+      "destination": "yichao_v3_v9/config/active_release.json",
+      "source": "yichao_v3_v9/config/active_release.json",
+      "sha256": "8ef5d09819eb63f4d46c94c3ce321f2bf081744f693a215e45ee11ccfe9633bc"
+    },
+    {
+      "destination": "yichao_v3_v9/config/assets.lock.json",
+      "source": "yichao_v3_v9/config/assets.lock.json",
+      "sha256": "bc7fcb6f11332024c78e811676472a8b8888b8669a83d4bbed0c748448bbe431"
+    },
+    {
+      "destination": "yichao_v3_v9/config/command.schema.json",
+      "source": "yichao_v3_v9/config/command.schema.json",
+      "sha256": "530aed41fb692fe97b2b4ad8b68dc1b9d3a1f00fb1ce191b4f826a813b325c21"
+    },
+    {
+      "destination": "yichao_v3_v9/config/deployment.json",
+      "source": "yichao_v3_v9/config/deployment.json",
+      "sha256": "dce7949a41a77319bfa504402d739657862c66168d5b95e81cf034b37a6e3c44"
+    },
+    {
+      "destination": "yichao_v3_v9/config/interface.json",
+      "source": "yichao_v3_v9/config/interface.json",
+      "sha256": "e0767a3577a481ff6d89d26a72355796a1b376209efb15da124d92941d4f3ba6"
+    },
+    {
+      "destination": "yichao_v3_v9/config/joint_normalization.json",
+      "source": "yichao_v3_v9/config/joint_normalization.json",
+      "sha256": "31e60a3b3da7774cbb3aa749c54875824276b4f094485b8684029218f6d97170"
+    },
+    {
+      "destination": "yichao_v3_v9/config/lifecycle.json",
+      "source": "yichao_v3_v9/config/lifecycle.json",
+      "sha256": "37deb6938de047e99aa02be46e6aa2ee69b5276304302268a51182947b326f02"
+    },
+    {
+      "destination": "yichao_v3_v9/config/telemetry_contract.json",
+      "source": "yichao_v3_v9/config/telemetry_contract.json",
+      "sha256": "8416b3f238615cc7894a824d8a3138f7c0aba2a4ebd630290d55a5d6a22a4f35"
+    },
+    {
+      "destination": "yichao_v3_v9/fixtures/reference_vectors.json",
+      "source": "yichao_v3_v9/fixtures/reference_vectors.json",
+      "sha256": "de156d477b9703383ae5566e45b80ad796e7a089033192d8b4b1b54edcecb0f9"
+    },
+    {
+      "destination": "yichao_v3_v9/fixtures/telemetry_synthetic.jsonl",
+      "source": "yichao_v3_v9/fixtures/telemetry_synthetic.jsonl",
+      "sha256": "e0c8338ccfdeb18abb5fb2430a248e6aff9213cc252db46f8beb99ae057ee096"
+    },
+    {
+      "destination": "yichao_v3_v9/fixtures/two_shots.jsonl",
+      "source": "yichao_v3_v9/fixtures/two_shots.jsonl",
+      "sha256": "74edc533263bd5171ac4ca655dea3e653558dc6ac785c7be306594d6c5d8bd0c"
+    },
+    {
+      "destination": "yichao_v3_v9/requirements.lock",
+      "source": "yichao_v3_v9/requirements.lock",
+      "sha256": "92b84b7b2bc1f468d0e22a5b0da861f8458330aa38dec94618ad0878f5e422a1"
+    },
+    {
+      "destination": "yichao_v3_v9/run_offline.sh",
+      "source": "yichao_v3_v9/run_offline.sh",
+      "sha256": "b20f18ab8b4532f9d905ec8b12996ac9202aa0c4038b21963b8487ae62b26a1d"
+    },
+    {
+      "destination": "yichao_v3_v9/run_planner.sh",
+      "source": "yichao_v3_v9/run_planner.sh",
+      "sha256": "05ab8abcd248561a20609e59c93b7a0ea388ff5233a390c7c875e7435da01178"
+    },
+    {
+      "destination": "yichao_v3_v9/run_workstation_observer.sh",
+      "source": "yichao_v3_v9/run_workstation_observer.sh",
+      "sha256": "f9525aa6cb74c77d9eb017663136b9cd4b73c39fdb00e086b5d9561873207ad8"
+    },
+    {
+      "destination": "yichao_v3_v9/run_workstation_offline.sh",
+      "source": "yichao_v3_v9/run_workstation_offline.sh",
+      "sha256": "7de0eea2580f790640684e4c0ed0d706f46b01fc9a36fdc9a64bb017d1651881"
+    },
+    {
+      "destination": "yichao_v3_v9/scripts/run_yichao_stack.py",
+      "source": "yichao_v3_v9/scripts/run_yichao_stack.py",
+      "sha256": "c0b4b7c6fc88e626c891f2ad9ca6958a88a2dbdc19b4d5e719162d25eca4e326"
+    },
+    {
+      "destination": "yichao_v3_v9/scripts/start_yichao_dual_robots.sh",
+      "source": "yichao_v3_v9/scripts/start_yichao_dual_robots.sh",
+      "sha256": "659b161ab2c670bf5554f7179c659544d6f3530949953d427ca049031e41151c"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/__init__.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/__init__.py",
+      "sha256": "4c10c728d02141c0abd9966b0d173afc63886940a87bc081e5b8520fd7de3426"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/active_two_terminal.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/active_two_terminal.py",
+      "sha256": "0cb1b1d9737b971e55930590ed4e254cbea66d6c2eeb218d3010d632710bf254"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/ball_feedback.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/ball_feedback.py",
+      "sha256": "ac978867322808ad8c34dd06ad0ee7decdf17a122a5db989926b9852d826c7ce"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/base_feedback.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/base_feedback.py",
+      "sha256": "89efbdb6324f88432a3fb87b62a97ed6342f2a4dff6b4f0379f0769c84c29025"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/clock_bounds.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/clock_bounds.py",
+      "sha256": "d750aa1acc22decd67f90a41c2bb76a6de5f724195297f4bd3a05b19dd5bfb09"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/command_receiver.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/command_receiver.py",
+      "sha256": "dd8a5d250af52608dc4abec2fdd1ada33df728852fcb47062961cd04ff56e441"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/executor.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/executor.py",
+      "sha256": "0e9787d1a12cbbcd9b663f3aaeb7d800ac9945dcb2e6cebcfee676aaf2d66dc3"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/inference.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/inference.py",
+      "sha256": "a8b7a5f07717a08570cc56364e79338a18644a672eb4e6a318dd5287a1a53773"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/inputs.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/inputs.py",
+      "sha256": "9b8d0ea4a5defcdc10d713cef44d1912af58854f783bbc893390bb425051fdb1"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/isolation.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/isolation.py",
+      "sha256": "743c80bbb1f5b6254067579db417583f6d7f060507658543bfd7beca08e0353a"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/joint_feedback.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/joint_feedback.py",
+      "sha256": "2f6bbc31bac8afab437f7e72152198992dd8cb8a2560d1aade76a73d24e95473"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/joint_normalization.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/joint_normalization.py",
+      "sha256": "65097f314d94e6a37b3dd217d3a77c23be3c1e3d51abea123a6bd49a1fbf7e3e"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/launch.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/launch.py",
+      "sha256": "8cba8d14a03b8548fd8ca14c042d623817f71b56e7a458a731958b2067e9583f"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/manifest.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/manifest.py",
+      "sha256": "a1c5d4db396f22ced4e5d25d4a10d593e882700d94063d204c0f972baac3af47"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/movement_client.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/movement_client.py",
+      "sha256": "a4cd32c35d32ade363c2c3cb6915bceac33e7df7c57c8c69e30e14c1505fc697"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/movement_receiver.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/movement_receiver.py",
+      "sha256": "723105b167b962b851d64fa9fc4d9d40929acfc70cd3d93500ce1931a5ed4019"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/observer.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/observer.py",
+      "sha256": "736eaa14e60084c58f98e603d0e852d78f28f2f167b1968f3caea515d518eaa2"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/offline.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/offline.py",
+      "sha256": "9ebcfe6ba6ac51d6844c57554293684fc7e8fa7ae562105a1115f843bd6667a0"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/onboard_isolation.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/onboard_isolation.py",
+      "sha256": "40f84229dc3fa1db5b788ef35795aece6118c49384110b77f9d5aca6a6b6c233"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/onboard_movement.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/onboard_movement.py",
+      "sha256": "2e46e98fcf14734303aae77d9d78de7ed3c16faf75f8c57a794da78e8232b30f"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/pose_feedback.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/pose_feedback.py",
+      "sha256": "c44e4e52bcff323eb399927f5924e23e19f07ff69e17548a47b899cd3e83f586"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/predictor_calibration.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/predictor_calibration.py",
+      "sha256": "18592b3c01b45713ee1509e350bd48d3b3eeff37ecf3c56a7a24e6c562cbad57"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/predictor_freshness.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/predictor_freshness.py",
+      "sha256": "fdfe5c29e22f1021ff2cff8987e104a7dbd06f114096864c25c80b9f6516e967"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/protocol.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/protocol.py",
+      "sha256": "4eb96eddaf5952e058944937392b2f7d9668ef14215f7e9890babbd508ccc259"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/relay.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/relay.py",
+      "sha256": "99e5ee139504cf2b9d9cd54f4df6370562b05ee537403163bd837792d3461cb1"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/run_log.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/run_log.py",
+      "sha256": "7461e90b87778a611a272f0f323130e829c4d269d6d8cbee1e6de0a468076b0a"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/runtime_recovery.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/runtime_recovery.py",
+      "sha256": "703d15d7810da46425fb3ef4ad98b712b0c3799236e3fe71e03e3f3eaa3db03f"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/runtime_relay.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/runtime_relay.py",
+      "sha256": "ee2f3635a87de725ef5289190b02c08f155ce9b2fb9f74001697dcd85fc5b08a"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/runtime_shadow.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/runtime_shadow.py",
+      "sha256": "d7cd4abb2b3030f42f35ce48f1ac0a948cc5399d39e85c232fa126dbdd0f1e6c"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/target_feedback.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/target_feedback.py",
+      "sha256": "1ad60ec952063e295d78022c55a16a21e51319026a84ef16a9072aa7c752bdea"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/telemetry.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/telemetry.py",
+      "sha256": "9bfd1a92eb01a4ccc6223ce293429e5e81e3d155d18385fe569aa4c18db9ffbb"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/two_terminal.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/two_terminal.py",
+      "sha256": "e6c688e58fbedebc8265e96658c349f7955e3c2f07e28bbf2d03ac6f122a2f00"
+    },
+    {
+      "destination": "yichao_v3_v9/src/yichao_v3_v9/v9_wire.py",
+      "source": "yichao_v3_v9/src/yichao_v3_v9/v9_wire.py",
+      "sha256": "a1129c813c7c0b66464ad18a473f2842dbb829a2c8971d32a060ce490bbdf25a"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/common.py",
+      "source": "yichao_v3_v9/tests/common.py",
+      "sha256": "13f4f1dd3720e4f161a644d295a968094920eb3f9f116deff7f64971c374fcad"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_acceptance.py",
+      "source": "yichao_v3_v9/tests/test_acceptance.py",
+      "sha256": "f1a73ba6ee3b0be12343f9adac2cec253bae0df6d8be8238d238740c93c722e7"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_active_continuity.py",
+      "source": "yichao_v3_v9/tests/test_active_continuity.py",
+      "sha256": "4c38b811cddbcec86f2dd085ee5f2c3c4fffe14a0de061b5a0a6a1ea2d8378a8"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_active_launcher.py",
+      "source": "yichao_v3_v9/tests/test_active_launcher.py",
+      "sha256": "e8382917765745f0a5452c2116df24396daee5a7edf7c9f33aad780234228659"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_active_recovery.py",
+      "source": "yichao_v3_v9/tests/test_active_recovery.py",
+      "sha256": "9774b008ce17a086fc068f58b0e66c9cffe83962b72c44c840f21f414ccf7071"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_active_runtime.py",
+      "source": "yichao_v3_v9/tests/test_active_runtime.py",
+      "sha256": "e06e3591f3962dae58f223b680605566df80159347179aecc8aff24dcda6e7b0"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_ball_feedback.py",
+      "source": "yichao_v3_v9/tests/test_ball_feedback.py",
+      "sha256": "d3964cbdc93de0fc0a0dcb6bf732c8d97b6cf700a638ef77db2a8a0a5ce03ab8"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_base_feedback.py",
+      "source": "yichao_v3_v9/tests/test_base_feedback.py",
+      "sha256": "2848aa50e67cb0916530e7dfb748356e492b3a5588221582946a3a67cc9f388c"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_first_hitter.py",
+      "source": "yichao_v3_v9/tests/test_first_hitter.py",
+      "sha256": "2d2d3795d7df14b749cc036ba0f113c4a01e74c0e62c042991c113000a5519db"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_full_relay.py",
+      "source": "yichao_v3_v9/tests/test_full_relay.py",
+      "sha256": "f022a51c393121ccf983dd27ac018021d277b6c6272ff96d70477b5b90186e20"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_joint_feedback.py",
+      "source": "yichao_v3_v9/tests/test_joint_feedback.py",
+      "sha256": "3929658b1316c2ef4222f5ce4e77a9f0b0b8900ca38e08a8d001246b25d7a33b"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_joint_normalization.py",
+      "source": "yichao_v3_v9/tests/test_joint_normalization.py",
+      "sha256": "adb61cd389fd7cc39f13844cade4d8e3865521688f1e9a8aca91af3f8bbaeb45"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_movement_transaction.py",
+      "source": "yichao_v3_v9/tests/test_movement_transaction.py",
+      "sha256": "7890fde5f2e220e29c083edce513196c8d71638c1e6b61bf8a290bf9dce17d32"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_observer.py",
+      "source": "yichao_v3_v9/tests/test_observer.py",
+      "sha256": "f0d3aad480a7430c36b661ce5456b1fce7cf3e1910500fb55e105e1e4d21f702"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_onboard_active.py",
+      "source": "yichao_v3_v9/tests/test_onboard_active.py",
+      "sha256": "75420882a591c9c219dd25cb3174019269318c4c7a2f88932aa25e50195e6568"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_pose_feedback.py",
+      "source": "yichao_v3_v9/tests/test_pose_feedback.py",
+      "sha256": "23c49977c9f6984dc8d46bdd69b2631bc7b82f7817d9c97acbd70ed34b73e2f3"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_predictor_calibration.py",
+      "source": "yichao_v3_v9/tests/test_predictor_calibration.py",
+      "sha256": "f63d4d1a99ce65c9ef791d7b6cde587d1bf5898a241bc79166f83fbda1c12be3"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_predictor_freshness.py",
+      "source": "yichao_v3_v9/tests/test_predictor_freshness.py",
+      "sha256": "80af821dcba0c14294ebbd598e490a0a5e2fa31b2b52b4422e16d717f4509507"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_run_log.py",
+      "source": "yichao_v3_v9/tests/test_run_log.py",
+      "sha256": "066acf3dcace413416ebcd39228b59b2997de935ae36b313d2f11792e5b5b230"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_runtime_relay_contract.py",
+      "source": "yichao_v3_v9/tests/test_runtime_relay_contract.py",
+      "sha256": "752459e0d21e46e6b0f1f7f0e85a29a538d6ab255ceb2532c6869f831162a0f7"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_runtime_shadow.py",
+      "source": "yichao_v3_v9/tests/test_runtime_shadow.py",
+      "sha256": "5442f4c8cd4ccbc95a5d70b579f04d03dcc6dffdd3850a6a63dd2f662084fc4d"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_selector_wire.py",
+      "source": "yichao_v3_v9/tests/test_selector_wire.py",
+      "sha256": "2961009f07f828eaeceaac27d635d2eb98e806a118c231600254718e320453e2"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_target_feedback.py",
+      "source": "yichao_v3_v9/tests/test_target_feedback.py",
+      "sha256": "9c87f948b14a1dbe24947fc290493cf3a3e1fcbb26d36d9b5369c5ac9c93dada"
+    },
+    {
+      "destination": "yichao_v3_v9/tests/test_two_terminal.py",
+      "source": "yichao_v3_v9/tests/test_two_terminal.py",
+      "sha256": "35f37b5eea5dc256e0b29f39bdc083565d9e087a0a8cdabc93588bc0da961dbe"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/assemble_base_recording.py",
+      "source": "yichao_v3_v9/tools/assemble_base_recording.py",
+      "sha256": "47b4cc77c06ba88e9c035ba2e259bd330f2c0862016bf9a79da7a577e0062363"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/audit_motion_copies.py",
+      "source": "yichao_v3_v9/tools/audit_motion_copies.py",
+      "sha256": "7101143ebebf43528b93880096880059394e9a08a485739aaedbbb0c566ad39f"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/build_passive_telemetry.py",
+      "source": "yichao_v3_v9/tools/build_passive_telemetry.py",
+      "sha256": "7c64be21aaaac15ae137661d7f08cddd93d4e3f27bf43537c4ef057e60e49ade"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/capture_existing_inputs.py",
+      "source": "yichao_v3_v9/tools/capture_existing_inputs.py",
+      "sha256": "5b46766519a84f3240f53be540e6232ad4c1dc0f957b004bd5eedb370f4cfc5c"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/capture_onboard_shadow.py",
+      "source": "yichao_v3_v9/tools/capture_onboard_shadow.py",
+      "sha256": "c709c193d557dde2ecc28d8c38865890f9d614b290f6efecda545039e43e01b5"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/collect_remote.py",
+      "source": "yichao_v3_v9/tools/collect_remote.py",
+      "sha256": "c56fe5d77aa7127ed4e3dccaa5d40c03b3ad3c34ed65eadd33940dca83789c58"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/consume_joint_feedback.py",
+      "source": "yichao_v3_v9/tools/consume_joint_feedback.py",
+      "sha256": "2f38e2acd432d0174ff751435aca5530af7cb2cba9485ae5f5adc69d135b5d5d"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/convert_pose_recording.py",
+      "source": "yichao_v3_v9/tools/convert_pose_recording.py",
+      "sha256": "83d56e2d407426815092c88462a6d6b10e389fbf5806fe67d687e38488247b51"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/copy_inference_environment.py",
+      "source": "yichao_v3_v9/tools/copy_inference_environment.py",
+      "sha256": "0df6357ee35f551bbd413aa7404a750c6503b8951a8c265c71d85dd6b4acb8dc"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/export_training_inputs.py",
+      "source": "yichao_v3_v9/tools/export_training_inputs.py",
+      "sha256": "24f2be3760c39a50e523e0760d36800e56d21c0686180741ba8ed2ca6b318d38"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/freeze.py",
+      "source": "yichao_v3_v9/tools/freeze.py",
+      "sha256": "8c4f8c21d96c33bc9a8d5440041438e7965135649dc2b1d20038d79c4b98c6cf"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/make_contract.py",
+      "source": "yichao_v3_v9/tools/make_contract.py",
+      "sha256": "1cc74f0c94c1845347e046f0ed533f5a5409ca81e454be150218973c12af5e95"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/make_replay.py",
+      "source": "yichao_v3_v9/tools/make_replay.py",
+      "sha256": "1a2804d9fff38806f2cca7cb8b9e24996eb7d562d463ff0d68ac19220a9433e4"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/passive_v9_telemetry.cpp",
+      "source": "yichao_v3_v9/tools/passive_v9_telemetry.cpp",
+      "sha256": "b9070bb09b8638711d99bc5cace0c389ced412124e6cbab1ea601aa5a65e60c9"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/prepare_shadow_session.py",
+      "source": "yichao_v3_v9/tools/prepare_shadow_session.py",
+      "sha256": "69c5243d10bb07f2c40cee6f185030620d54267596bec2cda050a06e6adbff67"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/provision_environment.py",
+      "source": "yichao_v3_v9/tools/provision_environment.py",
+      "sha256": "a24bac3254bc9888d255b024d9ce7357e6f2a2f6962afebc3806ec79e390e362"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/provision_observer.py",
+      "source": "yichao_v3_v9/tools/provision_observer.py",
+      "sha256": "ba8cc31624a01d88e8363b0cc0f91da125dda274d06e3bb254ead8c6a4f8334d"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/provision_onboard_shadow.py",
+      "source": "yichao_v3_v9/tools/provision_onboard_shadow.py",
+      "sha256": "bb5fa7821b655a1f91fa029f79c4eee253d6e441bb00b0237cc4a1a98801bbf7"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/read_lowstate.cpp",
+      "source": "yichao_v3_v9/tools/read_lowstate.cpp",
+      "sha256": "9e5fb58d9314948049d2ae6ba710a39f3c3cda6c1824449c3c85cf8e2b1a45e2"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/recover_active_trial.py",
+      "source": "yichao_v3_v9/tools/recover_active_trial.py",
+      "sha256": "e0611295bee07141fc54da5690e26efd5af84d5180f73e3b2a3854c43fa24383"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/relay_diagnostic_poses.py",
+      "source": "yichao_v3_v9/tools/relay_diagnostic_poses.py",
+      "sha256": "12aa6568ef28cbe330aa7a1547582932d786d86ff1705ca85fed192019eb70eb"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/replay_runtime_shadow.py",
+      "source": "yichao_v3_v9/tools/replay_runtime_shadow.py",
+      "sha256": "93a51e709706729286bec7cc27615acf0cf7788b754eb740d77c79f4d8ab48de"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/run_active_control.py",
+      "source": "yichao_v3_v9/tools/run_active_control.py",
+      "sha256": "8f5f0bbbaca22a5695ccec1dae53df88040e0d72a954215252e9a55ae7330e55"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/run_movement_pilot.py",
+      "source": "yichao_v3_v9/tools/run_movement_pilot.py",
+      "sha256": "a07d483561434130c22eaf88b59b422162b860cd6082b05b712fd0780bd153e6"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/run_onboard_active.py",
+      "source": "yichao_v3_v9/tools/run_onboard_active.py",
+      "sha256": "05d3670afff57c92fc203576ba68c7e13d5527808306002300a8a1ea5a77b56f"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/run_onboard_movement.py",
+      "source": "yichao_v3_v9/tools/run_onboard_movement.py",
+      "sha256": "3ca721baf3568bdd4cbcf9e7a539cc1b1a4e3f48ae25e3b75b7a589f0da5fdb5"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/run_onboard_relay.py",
+      "source": "yichao_v3_v9/tools/run_onboard_relay.py",
+      "sha256": "b5e77524629b3543dd8dd07299b782c368a252d2534d56c469a8d6efcce2c155"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/run_predictor_snapshot.py",
+      "source": "yichao_v3_v9/tools/run_predictor_snapshot.py",
+      "sha256": "c56857070c41a4e10ab884bfdbaac009c53197ec3d41ac43fe561aef04fc9030"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/run_runtime_relay.py",
+      "source": "yichao_v3_v9/tools/run_runtime_relay.py",
+      "sha256": "574a1fbfe4f84632a662cbacf191d673c52348a4743c949d93e88fb7125a59b2"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/simulate_runtime_relay.py",
+      "source": "yichao_v3_v9/tools/simulate_runtime_relay.py",
+      "sha256": "9f792af12b48802026ace092012aefe4b3e65dc4739a1ef3d4a2bcb9e59fbce4"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/test.py",
+      "source": "yichao_v3_v9/tools/test.py",
+      "sha256": "a86555684946cdc4c156f891ba7680cc71031139e46d56346dea30d1ed2ee237"
+    },
+    {
+      "destination": "yichao_v3_v9/tools/wait_active_ready.py",
+      "source": "yichao_v3_v9/tools/wait_active_ready.py",
+      "sha256": "3adc88733d39c41975f124457cea56fd6c1de72bba6fd306800935905181b9b7"
+    },
+    {
+      "destination": "AGENTS.md",
+      "source": "AGENTS.md",
+      "transform": "credential_table_and_assignment_redaction",
+      "sha256": "8e0c76aa85a321e3a0309df702b0d86c7b00f6d496bde43ee72352404748e643"
+    },
+    {
+      "destination": ".gitignore",
+      "source": "generated",
+      "sha256": "f463cd31eb08468e0910231d3f0f30eabdad2c2e71a480b5056212d7796d3b67"
+    }
+  ],
+  "excluded": "See source doc/github_upload_review_20260910/README.md; this manifest intentionally omits device copies, vendor, assets, environments, logs, and credentials."
+}

@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "layout": "<device-folder>/<absolute-remote-path-without-leading-slash>",
+  "common_excludes": [
+    ".venv/",
+    "venv/",
+    "__pycache__/",
+    "*.pyc",
+    "*.pyo",
+    ".pytest_cache/",
+    ".mypy_cache/",
+    ".ruff_cache/",
+    ".cache/",
+    "node_modules/"
+  ],
+  "roots": {
+    "workstation": [
+      "/home/odl/codebase/yichao_v3_v9_e14fd5b",
+      "/home/odl/codebase/pingpang_planner_yichao",
+      "/home/odl/codebase/pingpang_predictor_dual_v9",
+      "/home/odl/codebase/pingpang_doubles_v9_runtime",
+      "/home/odl/codebase/pingpang_planner_haoran_chingmu_mocap_g1",
+      "/home/odl/codebase/TABLETENNIS_MOCAP",
+      "/home/odl/codebase/TABLETENNIS_PERCEPTION",
+      "/home/odl/codebase/ChingMuPythonSDKs_Linux",
+      "/home/odl/codebase/XING_Python_SDK-4.1.0.5645",
+      "/home/odl/codebase/TABLETENNIS_ZEDX",
+      "/home/odl/codebase/TABLETENNIS_ZEDXMINI",
+      "/home/odl/codebase/_planner_backups",
+      "/home/odl/codebase/a3_planner",
+      "/home/odl/codebase/pingpang_doubles_v6_baseline",
+      "/home/odl/codebase/pingpang_planner",
+      "/home/odl/codebase/pingpang_planner_active_v1_20260812",
+      "/home/odl/codebase/pingpang_planner_e31_current_calib_20260806",
+      "/home/odl/codebase/pingpang_planner_residual_20260807",
+      "/home/odl/codebase/sports-mimic",
+      "/home/odl/backups",
+      "/home/odl/staging",
+      "/home/odl/桌面",
+      "/home/odl/下载/data",
+      "/home/odl/下载/inf_data",
+      "/home/odl/下载/Apritag",
+      "/home/odl/下载/policy",
+      "/home/odl/下载/XING_Python_SDK-4.1.0.5645.zip",
+      "/home/odl/logs/v11_dual_stack",
+      "/home/odl/logs/doubles_v9_runtime",
+      "/home/odl/logs/predictor_dual_v9"
+    ],
+    "right": [
+      "/home/unitree/haoran/yichao_v3_v9_onboard_20260907T162746Z",
+      "/home/unitree/haoran/yichao_v3_v9_diagnostics",
+      "/home/unitree/haoran/doubles-v9-real-runtime",
+      "/home/unitree/haoran/doubles-v11-r2i299-resume42500-dual-runtime",
+      "/home/unitree/haoran/pingpang_deploy",
+      "/home/unitree/haoran/hitter-deploy",
+      "/home/unitree/haoran/sports-mimic-deploy",
+      "/home/unitree/haoran/sports-mimic-dev-camera",
+      "/home/unitree/unitree_sdk2-main",
+      "/home/unitree/cyclonedds_ws",
+      "/home/unitree/haoran/doubles-v10-i25000-dual-runtime/data"
+    ],
+    "left": [
+      "/home/unitree/haoran/yichao_v3_v9_onboard_20260907T162746Z",
+      "/home/unitree/haoran/yichao_v3_v9_diagnostics",
+      "/home/unitree/haoran/doubles-v9-real-runtime",
+      "/home/unitree/haoran/doubles-v11-r2i299-resume42500-dual-runtime",
+      "/home/unitree/haoran/pingpang_deploy",
+      "/home/unitree/haoran/hitter-deploy",
+      "/home/unitree/haoran/sports-mimic-deploy",
+      "/home/unitree/haoran/sports-mimic-dev-camera",
+      "/home/unitree/unitree_sdk2-main",
+      "/home/unitree/cyclonedds_ws",
+      "/home/unitree/haoran/doubles-v10-i25000-dual-runtime/data"
+    ]
+  },
+  "root_excludes": {
+    "default": [
+      "/logs/",
+      "/g1_gym_deploy/logs/",
+      "/g1_gym_deploy/scripts/logs/"
+    ],
+    "pingpang_doubles_v9_runtime": [
+      "/outputs/ros_web_monitor_logs/"
+    ],
+    "cyclonedds_ws": [
+      "/log/"
+    ],
+    "yichao_v3_v9_onboard_20260907T162746Z": [
+      "/onboard_shadow.lock"
+    ]
+  },
+  "managed_deployments": {
+    "workstation": "/home/odl/codebase/yichao_v3_v9_e14fd5b",
+    "right": "/home/unitree/haoran/yichao_v3_v9_onboard_20260907T162746Z",
+    "left": "/home/unitree/haoran/yichao_v3_v9_onboard_20260907T162746Z"
+  },
+  "files": {
+    "workstation": [
+      "/home/odl/codebase/udp_broadcast_listener.py",
+      "/home/odl/codebase/pingpang-doubles-v10-runtime-3b11bb0.tar.gz",
+      "/home/odl/下载/0303-best.onnx",
+      "/home/odl/下载/TABLETENNIS_MODELPLANNER-kai.tar.gz",
+      "/home/odl/下载/inf_data.zip",
+      "/home/odl/下载/0227_combined.zip",
+      "/home/odl/下载/Python SDK 说明.pdf",
+      "/home/odl/下载/30C系统烧录.pdf",
+      "/home/odl/logs/doubles_v10_runtime/dual_v10_66_recorder_report.json",
+      "/home/odl/logs/doubles_v10_runtime/dual_v10_198_recorder_report.json",
+      "/home/odl/logs/doubles_v10_runtime/doubles_20260904_match_analysis.json"
+    ],
+    "left": [],
+    "right": []
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "yichao-v3-v9-deployment-v1",
+  "actor": 199,
+  "safe_filter_enabled": true,
+  "execution_mode": "shadow",
+  "active_accepted": false,
+  "workstation": {
+    "ssh": "odl@172.16.3.126",
+    "root": "/home/odl/codebase/yichao_v3_v9_e14fd5b",
+    "ros_master_uri": "http://172.16.3.126:11311",
+    "ros_ip": "172.16.3.126"
+  },
+  "onboard_root": "/home/unitree/haoran/yichao_v3_v9_onboard_20260907T162746Z",
+  "robots": {
+    "198": {"physical_side": "left", "ros_role": "table_left", "ssh": "unitree@172.16.4.198", "mirrored": false, "private_telemetry_lcm": "udpm://239.255.77.198:7767?ttl=0"},
+    "66": {"physical_side": "right", "ros_role": "table_right", "ssh": "unitree@172.16.4.66", "mirrored": true, "private_telemetry_lcm": "udpm://239.255.77.66:7767?ttl=0"}
+  },
+  "pose_input_mode": "doubles-torso",
+  "ball_topic": "/doubles/ball_prediction",
+  "cpu_threads": 1,
+  "pose_duration_s": 60,
+  "onboard_duration_s": 45,
+  "client_duration_s": 20,
+  "requested_shots": 2,
+  "requires_device_handoff": true,
+  "predictor_started_by_this_package": false
+}
