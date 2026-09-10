@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Yichao Planner Monitor</title>
+  <style>
+    :root{color-scheme:light;--bg:#f5f5f7;--panel:rgba(255,255,255,.86);--line:rgba(60,60,67,.17);--text:#1d1d1f;--muted:#6e6e73;--faint:#8e8e93;--blue:#0071e3;--cyan:#00a6a6;--green:#248a3d;--orange:#ff9500;--red:#d70015;--shadow:0 14px 36px rgba(0,0,0,.07)}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff 0,#f5f5f7 58%,#eef2f8 100%);color:var(--text);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.78);backdrop-filter:blur(24px) saturate(160%)}
+    h1,h2,h3{margin:0}h1{font-size:25px;letter-spacing:-.03em}.sub,.small{color:var(--muted);font-size:12px}.pills{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.pill{border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700}.pill::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;background:currentColor}.ok{color:var(--green);background:rgba(36,138,61,.08)}.warn{color:#a45b00;background:rgba(255,149,0,.09)}.bad{color:var(--red);background:rgba(215,0,21,.07)}
+    main{max-width:1680px;margin:auto;padding:16px;display:grid;grid-template-columns:minmax(440px,.86fr) minmax(620px,1.35fr);gap:16px;align-items:start}.col{display:grid;gap:16px}section{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:14px;box-shadow:var(--shadow)}.title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px}
+    .config-grid,.robot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.config-card,.robot-card,.metric{border:1px solid var(--line);border-radius:10px;padding:10px;background:rgba(255,255,255,.66)}.config-card.right{border-top:3px solid var(--blue)}.config-card.left{border-top:3px solid var(--cyan)}.config-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.field label,.label{display:block;color:var(--faint);font-size:11px;font-weight:720;margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em}.field input,.field select{min-width:0;width:100%;min-height:34px;border:1px solid var(--line);border-radius:8px;padding:7px 9px;background:#fff;color:var(--text);font:13px ui-monospace,SFMono-Regular,Menlo,monospace}.apply{width:100%;margin-top:8px;min-height:35px;border:0;border-radius:8px;color:#fff;background:linear-gradient(180deg,#248a3d,#1e7433);font-weight:750;cursor:pointer}.apply:disabled{opacity:.5;cursor:not-allowed}.config-status{min-height:34px;margin-top:7px;color:var(--muted);font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}.error{color:var(--red)}
+    .topic-row .mono{min-width:0;overflow-wrap:anywhere}
+    .col,section,.config-card,.field,.metric{min-width:0}.value{overflow-wrap:anywhere}
+    .return-controls{border-top:1px solid var(--line);margin-top:10px;padding-top:10px}.return-controls .apply{background:var(--blue)}.return-status{white-space:pre-line}.return-help{margin:5px 0 8px;color:var(--muted);font-size:12px}
+    canvas{width:100%;display:block;border:1px solid var(--line);border-radius:9px;background:#fbfbfd}.field-canvas{aspect-ratio:16/9;min-height:260px;margin-top:11px}.table-canvas{aspect-ratio:16/7;min-height:290px}.trend{margin-top:10px}.trend canvas{height:145px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.value{font:700 14px ui-monospace,SFMono-Regular,Menlo,monospace}.phase{font-size:18px;color:var(--green)}.raw{max-height:260px;overflow:auto;white-space:pre-wrap;font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;border:1px solid var(--line);border-radius:8px;padding:9px;background:#fbfbfd}.topic-list{display:grid;gap:6px}.topic-row{display:grid;grid-template-columns:minmax(0,1.2fr) auto auto;gap:8px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:7px 9px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.legend{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:11px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px}
+    @media(max-width:1050px){main{grid-template-columns:1fr}.table-canvas{min-height:240px}}@media(max-width:650px){header{align-items:flex-start;flex-direction:column}.config-grid,.robot-grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.fields{grid-template-columns:1fr 1fr}main{padding:8px}section{padding:10px}}
+    .recording-controls{margin:12px 16px;padding:14px;border:1px solid var(--line);border-radius:12px;background:white;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.recording-controls button,.recording-controls select{border:1px solid var(--line);border-radius:7px;padding:7px 10px;background:#f5f5f7;color:var(--text)}button:disabled{opacity:.45;cursor:default}#view-mode{color:var(--blue)}
+  </style>
+</head>
+<body><div class="recording-controls"><strong id="view-mode">实时</strong>
+<button id="rec-start">开始录制</button><button id="rec-stop">停止保存</button>
+<select id="recordings"><option value="">选择录制</option></select><button id="replay-load">加载</button>
+<button id="replay-play">播放 / 暂停</button><button id="replay-live">实时</button>
+<select id="replay-speed"><option>0.5</option><option selected>1</option><option>2</option><option>4</option></select>
+<input id="replay-time" type="range" min="0" max="1" step="0.1" value="0" style="min-width:180px">
+<a id="recording-download">下载录制</a><label>导入 JSONL <input id="recording-import" type="file" accept=".jsonl" style="max-width:200px"></label>
+<span id="recording-status" role="status"></span><span id="model-status"></span></div>
+<header><div><h1>Yichao Planner Monitor</h1><div class="sub">shared predictor · Yichao + Fixed relay · table_right/66 first · runtime motion config</div></div><div class="pills"><span id="p-monitor" class="pill warn">monitor</span><span id="p-predictor" class="pill warn">predictor</span><span id="p-planner" class="pill warn">Yichao planner</span><span id="p-right" class="pill warn">66 / right</span><span id="p-left" class="pill warn">198 / left</span></div></header>
+<main>
+  <div class="col">
+    <section>
+      <div class="title"><h2>Doubles XY Before Table</h2><span id="clock" class="small">waiting</span></div>
+      <div class="config-grid">
+        <div class="config-card right" data-robot="table_right"><div class="config-head"><h3>table_right · 66</h3><span class="small">first hitter</span></div><div class="fields">
+          <div class="field"><label for="right-goal">goal x (canonical)</label><input id="right-goal" type="number" step="0.001"></div><div class="field"><label for="right-outward">outward y</label><input id="right-outward" type="number" step="0.0001"></div>
+          <div class="field"><label for="right-home">home y</label><input id="right-home" type="number" step="0.0001"></div><div class="field"><label for="right-hold">outward hold (s)</label><input id="right-hold" type="number" step="0.1"></div>
+        </div><button id="right-apply" class="apply">Apply next move · 66</button><div id="right-config-status" class="config-status">waiting for planner status</div>
+        <div class="return-controls"><strong>本机 RETURN 时机</strong>
+          <div class="return-help">相对上一台击球时刻；正值提前，负值延后。修改从下轮生效。</div>
+          <div class="fields">
+            <div class="field"><label for="right-return-mode">回位触发方式</label><select id="right-return-mode"><option value="strike_time">按上一台击球时刻</option><option value="peer_outward">原有 OUTWARD 触发</option></select></div>
+            <div class="field"><label for="right-return-lead">回位提前量 (ms)</label><input id="right-return-lead" type="number" min="-200" max="200" step="20" value="100"></div>
+          </div><button id="right-return-apply" class="apply">应用到下轮回位 · 66</button>
+          <div id="right-return-status" class="config-status return-status" aria-live="polite">等待 planner 回显</div>
+        </div></div>
+        <div class="config-card left" data-robot="table_left"><div class="config-head"><h3>table_left · 198</h3><span class="small">peer</span></div><div class="fields">
+          <div class="field"><label for="left-goal">goal x (canonical)</label><input id="left-goal" type="number" step="0.001"></div><div class="field"><label for="left-outward">outward y</label><input id="left-outward" type="number" step="0.0001"></div>
+          <div class="field"><label for="left-home">home y</label><input id="left-home" type="number" step="0.0001"></div><div class="field"><label for="left-hold">outward hold (s)</label><input id="left-hold" type="number" step="0.1"></div>
+        </div><button id="left-apply" class="apply">Apply next move · 198</button><div id="left-config-status" class="config-status">waiting for planner status</div>
+        <div class="return-controls"><strong>本机 RETURN 时机</strong>
+          <div class="return-help">相对上一台击球时刻；正值提前，负值延后。修改从下轮生效。</div>
+          <div class="fields">
+            <div class="field"><label for="left-return-mode">回位触发方式</label><select id="left-return-mode"><option value="strike_time">按上一台击球时刻</option><option value="peer_outward">原有 OUTWARD 触发</option></select></div>
+            <div class="field"><label for="left-return-lead">回位提前量 (ms)</label><input id="left-return-lead" type="number" min="-200" max="200" step="20" value="100"></div>
+          </div><button id="left-return-apply" class="apply">应用到下轮回位 · 198</button>
+          <div id="left-return-status" class="config-status return-status" aria-live="polite">等待 planner 回显</div>
+        </div></div>
+      </div>
+      <div id="position-sources" class="small mono" style="overflow-wrap:anywhere"></div>
+      <canvas id="field" class="field-canvas" width="900" height="500"></canvas>
+      <div class="legend"><span><i class="dot" style="background:var(--blue)"></i>66</span><span><i class="dot" style="background:var(--cyan)"></i>198</span><span><i class="dot" style="background:var(--orange)"></i>outward target</span><span><i class="dot" style="background:var(--green)"></i>home target</span></div>
+    </section>
+    <section><div class="title"><h2>Robot State</h2><span class="small">two controllers</span></div><div class="robot-grid">
+      <div class="robot-card"><div class="config-head"><h3>66 / table_right</h3><span id="right-valid" class="pill warn">state</span></div><div class="metrics"><div class="metric"><span class="label">FSM</span><span id="right-phase" class="value phase">n/a</span></div><div class="metric"><span class="label">role</span><span id="right-role" class="value">n/a</span></div><div class="metric"><span class="label">ready</span><span id="right-ready" class="value">n/a</span></div><div class="metric"><span class="label">base xyz</span><span id="right-base" class="value">n/a</span></div><div class="metric"><span class="label">velocity xyz</span><span id="right-velocity" class="value">n/a</span></div><div class="metric"><span class="label">target</span><span id="right-target" class="value">n/a</span></div><div class="metric"><span class="label">torso xyz</span><span id="right-torso" class="value">n/a</span></div><div class="metric"><span class="label">torso RPY deg</span><span id="right-rpy" class="value">n/a</span></div><div class="metric"><span class="label">torso age</span><span id="right-torso-age" class="value">n/a</span></div></div></div>
+      <div class="robot-card"><div class="config-head"><h3>198 / table_left</h3><span id="left-valid" class="pill warn">state</span></div><div class="metrics"><div class="metric"><span class="label">FSM</span><span id="left-phase" class="value phase">n/a</span></div><div class="metric"><span class="label">role</span><span id="left-role" class="value">n/a</span></div><div class="metric"><span class="label">ready</span><span id="left-ready" class="value">n/a</span></div><div class="metric"><span class="label">base xyz</span><span id="left-base" class="value">n/a</span></div><div class="metric"><span class="label">velocity xyz</span><span id="left-velocity" class="value">n/a</span></div><div class="metric"><span class="label">target</span><span id="left-target" class="value">n/a</span></div><div class="metric"><span class="label">torso xyz</span><span id="left-torso" class="value">n/a</span></div><div class="metric"><span class="label">torso RPY deg</span><span id="left-rpy" class="value">n/a</span></div><div class="metric"><span class="label">torso age</span><span id="left-torso-age" class="value">n/a</span></div></div></div>
+    </div></section>
+    <section><div class="title"><h2>Topics</h2><span id="topic-count" class="small">0</span></div><div id="topics" class="topic-list"></div></section>
+  </div>
+  <div class="col">
+    <section><div class="title"><h2>Table & Racket</h2><span id="table-meta" class="small">shared predictor</span></div><canvas id="table" class="table-canvas" width="1100" height="480"></canvas></section>
+    <section><div class="title"><h2>Planner / Relay</h2><span id="planner-mode" class="small">n/a</span></div><div class="metrics"><div class="metric"><span class="label">cycle hitter</span><span id="cycle-hitter" class="value">n/a</span></div><div class="metric"><span class="label">shot id</span><span id="shot-id" class="value">n/a</span></div><div class="metric"><span class="label">relay stage</span><span id="relay-stage" class="value">n/a</span></div><div class="metric"><span class="label">commit token</span><span id="commit-token" class="value">n/a</span></div><div class="metric"><span class="label">shadow</span><span id="shadow" class="value">n/a</span></div><div class="metric"><span class="label">admission / fallback</span><span id="reasons" class="value">none</span></div></div></section>
+    <section><div class="title"><h2>Trends</h2><span class="small">last 30s</span></div><div class="trend"><div class="title"><strong>time_to_strike</strong><span id="tts-meta" class="small">n/a</span></div><canvas id="tts" width="1000" height="180"></canvas></div><div class="trend"><div class="title"><strong>prediction position</strong><span id="position-meta" class="small">n/a</span></div><canvas id="position" width="1000" height="180"></canvas></div><div class="trend"><div class="title"><strong>racket velocity</strong><span id="racket-meta" class="small">n/a</span></div><canvas id="racket" width="1000" height="180"></canvas></div><div class="trend"><div class="title"><strong>base Y · 66 / 198</strong><span id="base-meta" class="small">n/a</span></div><canvas id="base-trend" width="1000" height="180"></canvas></div></section>
+    <section><div class="title"><h2>Latest Doubles Payload</h2><span class="small"><a href="/api/snapshot">snapshot</a> · <a href="/api/log/latest">JSONL</a></span></div><div id="raw" class="raw">waiting</div></section>
+  </div>
+</main>
+<script>
+const $=id=>document.getElementById(id);const finite=v=>v!==null&&v!==undefined&&Number.isFinite(Number(v));const fmt=(v,d=3)=>finite(v)?Number(v).toFixed(d):'n/a';const vec=v=>Array.isArray(v)?`[${v.map(x=>fmt(x,3)).join(', ')}]`:'n/a';
+const robots={right:'table_right',left:'table_left'};const dirty={right:false,left:false};const clientError={right:'',left:''};const published={right:null,left:null};let snap={topics:{},server:{},motion_config_submit:{}};const history={ball:[],right:[],left:[]};
+const topic=key=>snap.topics?.[key]||null;const data=key=>topic(key)?.data||{};const age=key=>topic(key)?.age_s;const cls=(ok,fresh=true)=>ok&&fresh?'pill ok':'pill bad';const fresh=key=>finite(age(key))&&Number(age(key))<.5;
+function setPill(id,ok,label,isFresh=true){const n=$(id);n.className=cls(ok,isFresh);n.textContent=label}
+function recordHistory(key,event){event._browser_seen_ms=Date.now();const now=Date.now()/1000;const row={t:now,data:event.data||{}};if(key==='ball')history.ball.push(row);if(key==='right_state')history.right.push(row);if(key==='left_state')history.left.push(row);for(const rows of Object.values(history))while(rows.length&&rows[0].t<now-30)rows.shift()}
+function configStatus(side){return data('fixed_status')?.runtime_motion_config?.[robots[side]]||{} }function configValues(side){const s=configStatus(side);return s.pending||s.active||published[side]||snap.motion_config_submit?.[robots[side]]?.last_sent||null}
+function syncConfig(side){const v=configValues(side);if(v&&!dirty[side]){const displayedGoal=finite(v.goal_x_canonical)?v.goal_x_canonical:v.goal_x;if(finite(displayedGoal))$(`${side}-goal`).value=Number(displayedGoal).toFixed(3);if(finite(v.outward_y))$(`${side}-outward`).value=Number(v.outward_y).toFixed(4);if(finite(v.home_y))$(`${side}-home`).value=Number(v.home_y).toFixed(4);if(finite(v.outward_hold_s))$(`${side}-hold`).value=Number(v.outward_hold_s).toFixed(1)}const s=configStatus(side),node=$(`${side}-config-status`),serverError=snap.motion_config_submit?.[robots[side]]?.error||'';if(clientError[side]||serverError||s.error){node.className='config-status error';node.textContent=`config error: ${clientError[side]||serverError||s.error}`;return}if(s.pending){const waiting=[];if(s.pending.awaiting_outward)waiting.push('next OUTWARD');if(s.pending.awaiting_home)waiting.push('next RETURN');node.className='config-status';node.textContent=`received ${s.received_command_id||''} · robot ${s.robot_received_command_id||'waiting'} · ${waiting.join(' + ')}`;return}if(s.active){node.className='config-status';node.textContent=`active · physical X=${fmt(s.active.goal_x)} · outward ack=${s.outward_applied_command_id||'none'} · home ack=${s.home_applied_command_id||'none'} · X clip=±${fmt(s.active.target_base_x_clip??.04,3)}`;return}node.textContent=published[side]?`published ${published[side].command_id}; waiting for planner ack`:'waiting for planner status'}
+async function submit(side){if(replayMode)return;clientError[side]='';const s=configStatus(side),canonicalGoal=Number($(`${side}-goal`).value),startupX=Number(s.startup_x),startupCanonicalX=Number(s.startup_canonical_x);if(!Number.isFinite(startupX)||!Number.isFinite(startupCanonicalX)){clientError[side]='waiting for the first robot X frame';syncConfig(side);return}const body={goal_x:startupX+canonicalGoal-startupCanonicalX,outward_y:Number($(`${side}-outward`).value),home_y:Number($(`${side}-home`).value),outward_hold_s:Number($(`${side}-hold`).value)};if(!Number.isFinite(canonicalGoal)||Object.values(body).some(v=>!Number.isFinite(v))){clientError[side]='all four values must be finite';syncConfig(side);return}const button=$(`${side}-apply`);button.disabled=true;$(`${side}-config-status`).textContent='publishing...';try{const res=await fetch(`/api/runtime_motion_config/${robots[side]}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const result=await res.json();if(!res.ok||!result.ok)throw new Error(result.error||`HTTP ${res.status}`);published[side]=result;dirty[side]=false;await refresh();}catch(error){clientError[side]=error.message||String(error);syncConfig(side)}finally{button.disabled=false}}
+for(const side of Object.keys(robots)){for(const name of ['goal','outward','home','hold']){$(`${side}-${name}`).addEventListener('input',()=>dirty[side]=true);$(`${side}-${name}`).addEventListener('keydown',e=>{if(e.key==='Enter')submit(side)})}$(`${side}-apply`).addEventListener('click',()=>submit(side))}
+const returnDirty={right:false,left:false},returnError={right:'',left:''},returnSent={right:null,left:null};
+const returnReasons={waiting_hit_ack:'等待上一台确认击球',waiting_for_tts:'等待触发时刻',waiting_turnaround:'等待外移后的短暂刹车',invalid_hitter_tts:'上一台 TTS 无效',path_clearance:'路径间距不足，等待原有触发',unsupported_return_direction:'移动方向不适用提前触发',stale_or_invalid_feedback:'双方状态过期或无效',strike_time:'按击球时刻提前/延后触发',peer_outward:'上一台 OUTWARD 触发',waiting:'等待触发条件',waiting_peer_outward:'等待上一台 OUTWARD',return_requested:'已请求回位',returning:'已进入 RETURN',complete:'本轮已完成',expired:'本轮未获击球确认，已超时'};
+function timingLabel(v){if(!v)return '等待回显';return v.mode==='peer_outward'?'原有 OUTWARD 触发':`${v.lead_ms>0?'提前':v.lead_ms<0?'延后':'击球时刻'}${v.lead_ms===0?'':` ${Math.abs(v.lead_ms)} ms`}`}
+function syncReturnTiming(side){
+ const s=data('fixed_status')?.return_timing?.[robots[side]],sent=returnSent[side]||snap.return_timing_submit?.[robots[side]]?.last_sent;
+ const v=sent&&s?.received_command_id!==sent.command_id?sent:s?.pending||s?.active;
+ if(v&&!returnDirty[side]){$(`${side}-return-mode`).value=v.mode;$(`${side}-return-lead`).value=v.lead_ms}
+ $(`${side}-return-lead`).disabled=$(`${side}-return-mode`).value==='peer_outward';
+ const node=$(`${side}-return-status`),error=returnError[side]||s?.error||snap.return_timing_submit?.[robots[side]]?.error;
+ node.className='config-status return-status'+(error?' error':'');
+ if(error){node.textContent=error;return}
+ if(!s){node.textContent=sent?'已发送，等待 planner 确认':'等待 planner 回显';return}
+ const lines=[`当前：${timingLabel(s.active)}`];
+ if(s.pending)lines.push(`待生效：${timingLabel(s.pending)}（下轮本机回位）`);
+ if(sent&&s.received_command_id!==sent.command_id)lines.push('新设置已发送，等待 planner 确认');
+ if(!finite(topic('fixed_status')?._browser_seen_ms)||(Date.now()-topic('fixed_status')._browser_seen_ms)/1000+Number(topic('fixed_status').age_s||0)>.5)lines.push('planner 回显已过期');
+ const c=s.cycle;
+ if(c){lines.push(`本轮：${timingLabel(c.config)} · ${returnReasons[c.status]||c.status}`);if(c.trigger_reason)lines.push(`触发：${returnReasons[c.trigger_reason]||c.trigger_reason}`);if(c.blocked_reason)lines.push(returnReasons[c.blocked_reason]||c.blocked_reason);lines.push(`请求 → RETURN：${finite(c.request_to_return_ms)?fmt(c.request_to_return_ms,1)+' ms':'等待实际回位反馈'}`);node.title=c.commit_token||''}
+ node.textContent=lines.join('\n');
+}
+async function submitReturnTiming(side){if(replayMode)return;
+ returnError[side]='';const lead=$(`${side}-return-lead`),body={mode:$(`${side}-return-mode`).value,lead_ms:Number(lead.value)};
+ if(!lead.value.trim()||!Number.isFinite(body.lead_ms)||body.lead_ms < -200||body.lead_ms > 200||body.lead_ms%20!==0){returnError[side]='提前量须为 -200～200 ms，步长 20 ms';syncReturnTiming(side);return}
+ const button=$(`${side}-return-apply`);button.disabled=true;
+ try{const response=await fetch(`/api/return_timing/${robots[side]}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.error||`HTTP ${response.status}`);returnSent[side]=result;returnDirty[side]=false;await refresh()}catch(error){returnError[side]=error.message||String(error)}finally{button.disabled=false;syncReturnTiming(side)}
+}
+for(const side of Object.keys(robots)){for(const field of ['return-mode','return-lead']){$(`${side}-${field}`).addEventListener('input',()=>{returnDirty[side]=true;syncReturnTiming(side)})}$(`${side}-return-apply`).addEventListener('click',()=>submitReturnTiming(side))}
+setInterval(()=>{syncReturnTiming('right');syncReturnTiming('left')},500);
+function resize(canvas){const d=window.devicePixelRatio||1,w=Math.max(1,Math.round(canvas.clientWidth*d)),h=Math.max(1,Math.round(canvas.clientHeight*d));if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h}return{ctx:canvas.getContext('2d'),w,h}}
+function displayedRobotPosition(side) {
+  const validPosition = p => Array.isArray(p) && p.length === 3 && p.every(v => typeof v === 'number' && Number.isFinite(v));
+  const state = data(side + '_state'), torso = data(side + '_torso');
+  if (fresh(side + '_state') && state.valid === true && validPosition(state.base_position_xyz))
+    return {position: state.base_position_xyz, source: 'Controller base'};
+  if (fresh(side + '_torso') && validPosition(torso.position))
+    return {position: torso.position, source: '动捕 torso（无新鲜有效 Controller state）'};
+  return null;
+}
+function drawField() {
+  const c = $('field'), sized = resize(c), ctx = sized.ctx, w = sized.w, h = sized.h;
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = '#fbfbfd';
+  ctx.fillRect(0, 0, w, h);
+
+  const positions = Object.fromEntries(['right', 'left'].map(side => [side, displayedRobotPosition(side)]));
+  $('position-sources').textContent = ['right', 'left'].map(side => {
+    const p = positions[side], name = side === 'right' ? '66' : '198';
+    return p ? `${name} · ${p.source} ${vec(p.position)} m` : `${name} · 无新鲜位置`;
+  }).join(' ｜ ');
+  const view = {xMin: -0.2, xMax: 1.4, yMin: -1.5, yMax: 1.5};
+  for (const p of Object.values(positions)) if (p) {
+    view.xMin = Math.min(view.xMin, p.position[0] - .2);
+    view.xMax = Math.max(view.xMax, p.position[0] + .2);
+    view.yMin = Math.min(view.yMin, p.position[1] - .2);
+    view.yMax = Math.max(view.yMax, p.position[1] + .2);
+  }
+  const table = {frontX: 0.7, backX: 0.7 + 2.74, minY: -1.525 / 2, maxY: 1.525 / 2};
+  const box = {x: w * .09, y: h * .1, w: w * .84, h: h * .76};
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+  const px = y => box.x + (view.yMax - clamp(y, view.yMin, view.yMax)) /
+    (view.yMax - view.yMin) * box.w;
+  const py = x => box.y + (1 - (clamp(x, view.xMin, view.xMax) - view.xMin) /
+    (view.xMax - view.xMin)) * box.h;
+
+  ctx.strokeStyle = 'rgba(60,60,67,.14)';
+  for (let i = 0; i <= 6; i++) {
+    const x = box.x + box.w * i / 6;
+    ctx.beginPath(); ctx.moveTo(x, box.y); ctx.lineTo(x, box.y + box.h); ctx.stroke();
+  }
+  for (let i = 0; i <= 5; i++) {
+    const y = box.y + box.h * i / 5;
+    ctx.beginPath(); ctx.moveTo(box.x, y); ctx.lineTo(box.x + box.w, y); ctx.stroke();
+  }
+  ctx.strokeStyle = 'rgba(60,60,67,.36)';
+  ctx.strokeRect(box.x, box.y, box.w, box.h);
+
+  const tableX0 = Math.max(view.xMin, table.frontX);
+  const tableX1 = Math.min(view.xMax, table.backX);
+  const tableY0 = Math.max(view.yMin, table.minY);
+  const tableY1 = Math.min(view.yMax, table.maxY);
+  if (tableX0 < tableX1 && tableY0 < tableY1) {
+    const left = Math.min(px(tableY0), px(tableY1));
+    const top = Math.min(py(tableX0), py(tableX1));
+    const width = Math.abs(px(tableY1) - px(tableY0));
+    const height = Math.abs(py(tableX1) - py(tableX0));
+    ctx.fillStyle = 'rgba(0,113,227,.14)';
+    ctx.fillRect(left, top, width, height);
+    ctx.strokeStyle = '#0071e3';
+    ctx.lineWidth = 3;
+    ctx.strokeRect(left, top, width, height);
+  }
+
+  ctx.font = Math.max(11, h * .026) + 'px ui-monospace';
+  ctx.fillStyle = '#6e6e73';
+  ctx.fillText('origin y (+left / -right)', box.x, box.y + box.h + 24);
+
+  const drawTarget = (x, y, color, label) => {
+    if (!finite(x) || !finite(y)) return;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.arc(px(y), py(x), 11, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fillStyle = color;
+    ctx.fillText(label, px(y) + 14, py(x) - 10);
+  };
+  for (const side of ['right', 'left']) {
+    const values = configValues(side) || {};
+    drawTarget(values.goal_x, values.outward_y, '#ff9500',
+      side === 'right' ? 'R outward' : 'L outward');
+    drawTarget(values.goal_x, values.home_y, '#248a3d',
+      side === 'right' ? 'R home' : 'L home');
+  }
+
+  const drawRobot = (side, color, label) => {
+    const selected = positions[side];
+    if (!selected) return;
+    const position = selected.position;
+    label += selected.source === 'Controller base' ? ' base' : ' torso';
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(px(position[1]), py(position[0]), 10, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.fillStyle = color;
+    ctx.fillText(label, px(position[1]) + 13, py(position[0]) + 4);
+  };
+  drawRobot('right', '#0071e3', '66');
+  drawRobot('left', '#00a6a6', '198');
+
+  const ball = data('ball'), position = ball.position, strike = ball.predicted_strike_position;
+  if (ball.valid === true && fresh('ball') && Array.isArray(position)) {
+    ctx.fillStyle = '#bf5af2';
+    ctx.beginPath();
+    ctx.arc(px(position[1]), py(position[0]), 7, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  if (ball.valid === true && fresh('ball') && Array.isArray(strike)) {
+    ctx.strokeStyle = '#bf5af2';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(px(strike[1]) - 7, py(strike[0]) - 7);
+    ctx.lineTo(px(strike[1]) + 7, py(strike[0]) + 7);
+    ctx.moveTo(px(strike[1]) + 7, py(strike[0]) - 7);
+    ctx.lineTo(px(strike[1]) - 7, py(strike[0]) + 7);
+    ctx.stroke();
+  }
+}
+function drawTable(){const c=$('table'),{ctx,w,h}=resize(c);ctx.clearRect(0,0,w,h);ctx.fillStyle='#fbfbfd';ctx.fillRect(0,0,w,h);const x=w*.08,y=h*.16,tw=w*.58,th=h*.68;ctx.strokeStyle='#1d1d1f';ctx.lineWidth=2;ctx.strokeRect(x,y,tw,th);ctx.beginPath();ctx.moveTo(x+tw/2,y);ctx.lineTo(x+tw/2,y+th);ctx.stroke();const map=p=>[x+(Number(p[0])+2.1)/4.2*tw,y+(1.5-Number(p[1]))/3*th],ball=data('ball');for(const [p,color,r] of [[ball.position,'#bf5af2',8],[ball.predicted_strike_position,'#ff9500',10]])if(ball.valid===true&&fresh('ball')&&Array.isArray(p)){const q=map(p);ctx.fillStyle=color;ctx.beginPath();ctx.arc(q[0],q[1],r,0,Math.PI*2);ctx.fill()}ctx.fillStyle='#6e6e73';ctx.font=`${Math.max(12,h*.035)}px ui-monospace`;ctx.fillText(`shared ball · TTS ${fmt(ball.time_to_strike_s,3)}s`,x,y-12);$('table-meta').textContent=`shot=${ball.shot_id??'n/a'} · pred=${vec(ball.predicted_strike_position)} · racket v=${vec(ball.racket_velocity||ball.predicted_strike_velocity)}`}
+function drawTrend(id,series,extract,colors,metaId){const c=$(id),{ctx,w,h}=resize(c);ctx.clearRect(0,0,w,h);ctx.fillStyle='#fbfbfd';ctx.fillRect(0,0,w,h);const now=displayNow(),rows=series.map(r=>({t:r.t,v:extract(r.data)})).filter(r=>Array.isArray(r.v)&&r.v.some(finite));const values=rows.flatMap(r=>r.v.filter(finite).map(Number));const lo=values.length?Math.min(...values):-.1,hi=values.length?Math.max(...values):.1,pad=Math.max(.05,(hi-lo)*.15),min=lo-pad,max=hi+pad,px=t=>(t-(now-30))/30*w,py=v=>h-(v-min)/Math.max(max-min,1e-9)*h;ctx.strokeStyle='rgba(60,60,67,.13)';for(let i=1;i<4;i++){ctx.beginPath();ctx.moveTo(0,h*i/4);ctx.lineTo(w,h*i/4);ctx.stroke()}colors.forEach((color,j)=>{ctx.strokeStyle=color;ctx.lineWidth=2;ctx.beginPath();let active=false;for(const r of rows){if(!finite(r.v[j])){active=false;continue}const x=px(r.t),y=py(Number(r.v[j]));active?ctx.lineTo(x,y):ctx.moveTo(x,y);active=true}ctx.stroke()});if(metaId)$(metaId).textContent=values.length?`range ${fmt(lo,3)}..${fmt(hi,3)}`:'waiting'}
+function updateRobot(side) {
+  const state = data(`${side}_state`), command = data(`${side}_command`);
+  const torso = data(`${side}_torso`), valid = state.valid === true && !state.emergency_stop;
+  setPill(`${side}-valid`, valid, valid ? 'valid' : 'invalid', fresh(`${side}_state`));
+  $(`${side}-phase`).textContent = state.phase || 'n/a';
+  $(`${side}-role`).textContent = command.command?.role || 'n/a';
+  $(`${side}-ready`).textContent = `${state.ready ? 'YES' : 'NO'} / ${valid ? 'VALID' : 'INVALID'}`;
+  $(`${side}-base`).textContent = vec(state.base_position_xyz);
+  $(`${side}-velocity`).textContent = vec(state.base_linear_velocity_xyz);
+  $(`${side}-target`).textContent = `x(canonical)=${fmt((configValues(side) || {}).goal_x_canonical)} x(physical)=${fmt((configValues(side) || {}).goal_x)} y=${fmt(command.command?.desired_base_position?.[1] ?? state.target_base_y)}`;
+  $(`${side}-torso`).textContent = vec(torso.position);
+  $(`${side}-rpy`).textContent = vec(torso.rpy_deg);
+  $(`${side}-torso-age`).textContent = finite(age(`${side}_torso`)) ? `${fmt(age(`${side}_torso`), 3)}s` : 'n/a';
+}
+function renderTopics(){const root=$('topics');root.replaceChildren();const entries=Object.entries(snap.configured_topics||{});$('topic-count').textContent=`${entries.length} topics`;for(const [key,name] of entries){const r=topic(key),row=document.createElement('div');row.className='topic-row';const freshText=r?`${fmt(r.rate_hz,1)} Hz · age ${fmt(r.age_s,3)}s`:'waiting';for(const text of [name,freshText,r?.parse_error||'JSON']){const n=document.createElement('div');n.className='mono';n.textContent=text;row.appendChild(n)}root.appendChild(row)}}
+function render(){const yichao=data('fixed_status').yichao||{}; $('model-status').textContent=`actor ${yichao.decision?.actor_iteration??'—'} · ${yichao.reason||'waiting'} · targets ${(yichao.decision?.target_y||[]).map(v=>Number(v).toFixed(3)).join(' / ')}`;const fixed=data('fixed_status'),ball=data('ball'),right=data('right_command'),left=data('left_command');$('clock').textContent=new Date(displayNow()*1000).toLocaleTimeString();$('view-mode').textContent=replayMode?`回放 · ${replayAt.toFixed(1)} / ${replayDuration.toFixed(1)}s`:'实时';document.querySelectorAll('.apply').forEach(b=>b.disabled=replayMode);setPill('p-monitor',true,'monitor');setPill('p-predictor',ball.valid===true,'predictor',fresh('ball'));setPill('p-planner',Object.keys(fixed).length>0,'Yichao planner',fresh('fixed_status'));setPill('p-right',data('right_state').valid===true,'66 / right',fresh('right_state'));setPill('p-left',data('left_state').valid===true,'198 / left',fresh('left_state'));syncConfig('right');syncConfig('left');syncReturnTiming('right');syncReturnTiming('left');updateRobot('right');updateRobot('left');$('planner-mode').textContent=`${fixed.planner_mode||'n/a'} · ${fixed.shadow?'shadow':'active'}`;$('cycle-hitter').textContent=fixed.cycle_hitter||right.hitter||left.hitter||'n/a';$('shot-id').textContent=fixed.pending_shot_id||ball.shot_id||'n/a';$('relay-stage').textContent=[right.relay_stage,left.relay_stage].filter(Boolean).join(' / ')||'n/a';$('commit-token').textContent=fixed.cycle_commit_token||right.commit_token||left.commit_token||'n/a';$('shadow').textContent=fixed.shadow?'YES':'NO';const reasons=[...(fixed.admission_reasons||[]),...(right.fallbacks||[]),...(left.fallbacks||[])];$('reasons').textContent=[...new Set(reasons)].join(', ')||'none';drawField();drawTable();drawTrend('tts',history.ball,b=>[b.time_to_strike_s],['#bf5af2'],'tts-meta');drawTrend('position',history.ball,b=>b.predicted_strike_position||[],['#0071e3','#248a3d','#ff9500'],'position-meta');drawTrend('racket',history.ball,b=>b.racket_velocity||b.predicted_strike_velocity||[],['#0071e3','#248a3d','#ff9500'],'racket-meta');const baseRows=[...history.right.map(r=>({t:r.t,data:{v:[r.data.base_position_xyz?.[1],null]}})),...history.left.map(r=>({t:r.t,data:{v:[null,r.data.base_position_xyz?.[1]]}}))].sort((a,b)=>a.t-b.t);drawTrend('base-trend',baseRows,b=>b.v||[],['#0071e3','#00a6a6'],'base-meta');renderTopics();$('raw').textContent=JSON.stringify({fixed_status:fixed,ball,right_state:data('right_state'),right_command:right,left_state:data('left_state'),left_command:left},null,2)}
+async function refresh(){if(replayMode)return;const response=await fetch('/api/snapshot',{cache:'no-store'});snap=await response.json();for(const [key,record] of Object.entries(snap.topics||{}))recordHistory(key,record);render()}
+let replayMode=false,replayPlaying=false,replayFrames=[],replayId='',replayAt=0,replayDuration=0,replayRequest=0;
+function displayNow(){return replayMode?Date.parse(snap.server.now)/1000:Date.now()/1000}
+const events=new EventSource('/api/events');events.addEventListener('snapshot',event=>{if(replayMode)return;snap=JSON.parse(event.data);for(const [key,record] of Object.entries(snap.topics||{}))recordHistory(key,record);render()});events.addEventListener('topic',event=>{if(replayMode)return;const row=JSON.parse(event.data);snap.topics=snap.topics||{};snap.topics[row.key]={...row,age_s:0,_browser_seen_ms:Date.now()};recordHistory(row.key,row);render()});events.onerror=()=>setPill('p-monitor',false,'monitor',false);window.addEventListener('resize',render);
+refresh().catch(error=>{clientError.right=clientError.left=String(error);render()});
+
+async function recordingRequest(path){const r=await fetch(path,{method:'POST'}),j=await r.json();if(!r.ok)throw Error(j.error);await recordingsRefresh();return j}
+async function recordingsRefresh(){const r=await fetch('/api/recordings'),j=await r.json(),s=$('recordings'),chosen=s.value;s.replaceChildren(new Option('选择录制',''));for(const item of j.items||[])s.add(new Option(`${item.label} · ${item.duration_s.toFixed(1)}s`,item.id));s.value=chosen;$('recording-status').textContent=j.recording?.active?'正在录制':'未录制'}
+function recordingError(e){$('recording-status').textContent=String(e)}
+$('rec-start').onclick=()=>recordingRequest('/api/recordings/start').catch(recordingError);
+$('rec-stop').onclick=()=>recordingRequest('/api/recordings/stop').catch(recordingError);
+async function seekReplay(t){const request=++replayRequest;const r=await fetch(`/api/replay?id=${encodeURIComponent(replayId)}&start=${Math.max(0,t-30)}`),j=await r.json();if(request!==replayRequest||!replayMode)return;if(!r.ok)throw Error(j.error);replayFrames=j.frames;for(const f of replayFrames){f.snapshot.server=f.snapshot.server||{};f.snapshot.server.now=f.snapshot.server.now||new Date(Date.parse(j.metadata.created_at)+f.t*1000).toISOString()}replayDuration=j.duration_s;$('replay-time').max=replayDuration;replayAt=t;showReplay()}
+function showReplay(){let f=replayFrames[0];for(const row of replayFrames){if(row.t>replayAt)break;f=row}if(f){if(!f.snapshot.topics)throw Error('该历史录制使用旧 Monitor 格式');snap=f.snapshot;for(const key of Object.keys(history))history[key]=[];for(const row of replayFrames){if(row.t>replayAt||row.t<replayAt-30)continue;for(const [key,target] of [['ball','ball'],['right_state','right'],['left_state','left']]){const record=row.snapshot.topics?.[key];if(record)history[target].push({t:Date.parse(row.snapshot.server.now)/1000,data:record.data})}}render()}$('replay-time').value=replayAt}
+$('replay-load').onclick=async()=>{try{replayId=$('recordings').value;if(!replayId)return;replayMode=true;replayPlaying=false;for(const key of Object.keys(history))history[key]=[];await seekReplay(0)}catch(e){recordingError(e)}};
+$('replay-play').onclick=()=>{if(replayMode)replayPlaying=!replayPlaying};
+$('replay-live').onclick=()=>{replayMode=false;replayPlaying=false;replayRequest++;for(const key of Object.keys(history))history[key]=[];refresh().catch(recordingError)};
+$('replay-time').oninput=()=>{replayPlaying=false;seekReplay(Number($('replay-time').value)).catch(recordingError)};
+setInterval(()=>{if(!replayMode||!replayPlaying)return;replayAt=Math.min(replayDuration,replayAt+.1*Number($('replay-speed').value));if(replayAt>=replayDuration)replayPlaying=false;if(!replayFrames.length||replayAt>replayFrames.at(-1).t){replayPlaying=false;seekReplay(replayAt).then(()=>{replayPlaying=replayAt<replayDuration}).catch(recordingError)}else showReplay()},100);
+$('recordings').onchange=()=>{$('recording-download').href='/api/recordings/download?id='+encodeURIComponent($('recordings').value)};
+$('recording-import').onchange=async()=>{try{const file=$('recording-import').files[0];if(!file)return;const r=await fetch('/api/recordings/import',{method:'POST',body:file}),j=await r.json();if(!r.ok)throw Error(j.error);await recordingsRefresh();$('recordings').value=j.id;$('recordings').onchange()}catch(e){recordingError(e)}};
+recordingsRefresh().catch(recordingError);
+</script>
+</body>
+</html>

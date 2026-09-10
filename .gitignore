@@ -13,3 +13,11 @@ vendor/
 *.pt
 .env
 AGENTS.private.md
+
+# Read-only external test dependencies and retired deployment archives
+baseline/controller_reference/
+baseline/predictor_reference/
+baseline/training_reference/
+retired_assets/
+retired_deployment.tar.gz
+*.tar.gz

@@ -6,7 +6,7 @@ import numpy as np
 
 from . import ROOT
 from .inputs import array
-from utils.joint_mapping import LAB_JOINT_NAMES
+LAB_JOINT_NAMES = tuple(json.loads((ROOT/'config/joint_normalization.json').read_text())['joint_names'])
 
 
 class JointNormalizer:

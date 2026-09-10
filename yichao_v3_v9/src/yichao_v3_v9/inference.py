@@ -16,7 +16,10 @@ def project(action):
 
 
 class Pipeline:
-    def __init__(self, actor=199):
+    def __init__(self, actor=199, workspace=(-1.2, 1.2)):
+        self.workspace = tuple(float(v) for v in workspace)
+        if len(self.workspace) != 2 or not -1.2 <= self.workspace[0] < self.workspace[1] <= 1.2:
+            raise ValueError("workspace must be within the training interval")
         if actor not in (190,199):
             raise ValueError('actor must be 190 or 199')
         options=ort.SessionOptions()
@@ -27,7 +30,7 @@ class Pipeline:
         self.scorer=ort.InferenceSession(str(HANDOFF/'onnx/safe_filter_v3.onnx'),options,providers=['CPUExecutionProvider'])
         # Extraction is verified against the frozen PT in the acceptance tests.
         from . import ROOT
-        cfg=json.loads((ROOT/'config/interface.json').read_text())
+        cfg=json.loads((ROOT/'config/model.json').read_text())
         self.threshold=cfg['calibrated_threshold']
         self.home=np.array(cfg['training_home_y'],np.float32)/1.2
         self.actor_iteration=actor
@@ -46,14 +49,17 @@ class Pipeline:
         grid=np.array([(a,b) for a in offsets for b in offsets],np.float32)
         candidates=np.concatenate((nominal[None,:],np.clip(nominal+grid,-1,1),self.home[None,:]))
         risks=self.risks(state,candidates)
-        safe=((candidates[:,1]-candidates[:,0])>=np.float32(.45/1.2)) & (risks<=self.threshold)
+        in_workspace = ((candidates*1.2 >= self.workspace[0]-1e-7) & (candidates*1.2 <= self.workspace[1]+1e-7)).all(axis=1)
+        safe=((candidates[:,1]-candidates[:,0])>=np.float32(.45/1.2)) & (risks<=self.threshold) & in_workspace
         scores=np.where(safe,((candidates-nominal)**2).sum(axis=1)+1e-3*risks,np.inf)
         index=int(np.argmin(scores)) if safe.any() else len(candidates)-1
         selected=candidates[index]
         projected,intervention=project(selected)
         # Any subsequent projection must be scored; home is never assumed safe.
         projected_risk=float(self.risks(state,projected[None,:])[0]) if intervention else float(risks[index])
-        valid=bool(safe.any() and projected_risk<=self.threshold)
+        valid=bool(safe.any() and projected_risk<=self.threshold and
+                   np.all(projected*1.2 >= self.workspace[0]-1e-7) and
+                   np.all(projected*1.2 <= self.workspace[1]+1e-7))
         return {'valid':valid,'reason':None if valid else 'no_safe_candidate',
             'actor_iteration':self.actor_iteration,'raw_nominal':np.asarray(raw).tolist(),'nominal':nominal.tolist(),
             'filtered':selected.tolist(),'projected':projected.tolist(),'target_y':(projected*1.2).tolist(),

@@ -1,5 +1,7 @@
 # PingPong 项目协作说明
 
+当前代码已于2026-09-10重写：请以 yichao_v3_v9/README.md 的两个启动入口为准。以下旧会话/路径记录仅供历史参考，不可作为当前设备状态或自动启动依据。新版现场已确认站稳、移动换位和尝试接球，原 Fixed/Predictor/Controller 不修改。源码导出不含设备凭据、模型、环境、日志或旧归档。
+
 ## 项目目标与当前范围
 
 2026-09-10 GitHub文件筛选：用户要求仅选本地原生文件，先给清单审核，不上传；已是独立GitHub仓库的目录直接ignore。已确认并排除Pingpong-Doubles-Overleaf、pingpang_planner、pingpang_deploy、pingpang_controller及local_sim2sim内两个worktree，另排除三台设备副本、vendor/assets、标定副本、环境/原始日志/证据。yichao_v3_v9只有空本地.git、无提交和remote，可选本地适配文件但不携带.git。审核白名单为152文件、2,320,849字节，含Yichao110、本地仿真7、维护工具9、本地说明26；详见[审核清单](doc/github_upload_review_20260910/README.md)及同目录include_files.txt、manifest.json。AGENTS.md和旧交接手册含凭据，原文件不上传；配置/脚本仍有内网路径和IP，排除外部模型后不是可直接完整运行的交付。仅创建本地审核材料，没有创建仓库、提交、上传或修改现有独立Git仓库；等待用户审核后再执行下一步。
