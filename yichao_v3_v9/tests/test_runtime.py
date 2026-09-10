@@ -53,10 +53,26 @@ def test_no_ball_is_idle_without_inference_or_movement():
     assert all(not p['valid'] and p['command']['role'] == 'hold' for p in output.values())
 
 
+@pytest.mark.parametrize('positions', [(-.4, .7), (-.2, .4), (-.2, .7)])
+def test_hit_does_not_wait_for_either_robot_to_reach_model_target(positions):
+    runtime = YichaoRuntime(pipeline=Model(), shadow=False)
+    for i in range(6):
+        for name, y in zip(ROBOT_ORDER, positions):
+            runtime.update_robot_state(name, robot_state(name, y, i+1), 1.+i*.02)
+    incoming(runtime)
+    output = runtime.tick(1.1)
+    assert output['table_right']['command']['role'] == 'hit'
+    assert output['table_right']['command']['active']
+    assert not output['table_left']['command']['active']
+    assert all('moving_to_model_targets' not in p['admission_reasons'] for p in output.values())
+
+
 def test_model_targets_reach_existing_hit_and_movement_bridge():
     runtime = YichaoRuntime(pipeline=Model(), shadow=False)
-    warm(runtime); incoming(runtime)
+    warm(runtime); incoming(runtime, tts=.6)
     initial = runtime.tick(1.1)
+    assert all(p['command']['role'] == 'stage' for p in initial.values())
+    incoming(runtime, now=1.12, sequence=2)
     output = prepared(runtime)
     hitter = next(name for name,p in output.items() if p['command']['active'])
     peer = next(name for name in ROBOT_ORDER if name != hitter)
@@ -80,8 +96,8 @@ def test_history_warmup_recovers_without_restart():
     runtime.tick(1.)
     warm(runtime)
     output = runtime.tick(1.1)
-    assert any(p['command']['role']=='stage' for p in output.values())
-    assert any(p['command']['active'] for p in prepared(runtime).values())
+    assert output['table_right']['command']['role'] == 'hit'
+    assert output['table_right']['command']['active']
 
 
 def test_shadow_never_produces_executable_commands():
@@ -130,7 +146,7 @@ def test_model_targets_reach_original_observe_and_real_reference_assets(real_mod
                           excluded_source_ids=sidecar['move_pool_contract']['excluded_source_ids'],
                           expected_active_count=147)
     runtime = YichaoRuntime(pipeline=None if real_model else Model(), shadow=False)
-    warm(runtime);incoming(runtime)
+    warm(runtime);incoming(runtime, tts=.6)
     output = runtime.tick(1.1)
     assert all(p['command']['role']=='stage' for p in output.values())
     for name, y in zip(ROBOT_ORDER, (-.2, .7)):

@@ -21,10 +21,11 @@ Controller 的源码、模型和启动入口保持原样。目录名 `yichao_v3_
   不是声称已经同步两台机器人的传感器时钟。
 - `inference.py`：actor 199 + 原 safe_filter_v3，保留交付模型。
   候选集合在既有 Fixed 工作区内选择，再使用原过滤器评分；不截断一个已选好的目标后直接下发。
-- `runtime.py`：Yichao 位置策略接入 Fixed 生命周期。现有 Controller 在 HIT 内清零
-  target_base，因此先通过原 `stage` 接口移动，双机实际 Y 距目标均不超过 6 cm 后
-  才允许 Fixed 提交 HIT。超过现有击球时间窗则放弃该球，原因显示为
-  `moving_to_model_targets`，不会永久进入故障或重写 R2 流程。
+- `runtime.py`：Yichao 位置策略接入 Fixed 生命周期。2026-09-11 已删除适配层新增的
+  双机距模型目标均不超过 6 cm 才能 HIT 的条件。有效模型决策下，HIT 继续按原
+  Fixed 时间窗和阶段规则提交；等待提交时仍使用原 `stage` 接口下发横移目标。
+  现有 Controller 在 HIT 内清零 target_base；本次仅取消到位门槛，角色分配、
+  每球目标缓存及 Controller 行为未改。
 - `monitor/`：复用 Fixed 页面/订阅，增加推理状态、录制、回放、下载/导入。
 - `baseline/controller_reference/`、`predictor_reference/`、`training_reference/`：
   **只读测试参考，不进入部署包，也没有新版 Controller/Predictor 启动入口**。

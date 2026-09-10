@@ -8,8 +8,8 @@
     },
     {
       "destination": "AGENTS.md",
-      "sha256": "bfb6f9156b1b70b6ad1b6c497ffa175cb61a52d3dead238719390cdb430675b1",
-      "bytes": 67146
+      "sha256": "1cc6f5b3dfc9ef9a77695af95f2c9f3be8d3a75b802301b7459520295398444f",
+      "bytes": 99399
     },
     {
       "destination": "README.md",
@@ -25,6 +25,11 @@
       "destination": "doc/YICHAO_ACTIVE_TRIAL_2026-09-09.md",
       "sha256": "ef417d7c60f11881dd02806c7719be5c5f0c6d8fd059f979b01a5c9743f286be",
       "bytes": 8960
+    },
+    {
+      "destination": "doc/YICHAO_CHECKPOINT_2026-09-11.md",
+      "sha256": "3903288b151c6b07bedb328c42d521a71ac9f88995bd05595e8b8b1038eff37b",
+      "bytes": 2199
     },
     {
       "destination": "doc/YICHAO_CONTINUOUS_PLANNER_2026-09-09.md",
@@ -82,6 +87,11 @@
       "bytes": 4782
     },
     {
+      "destination": "doc/YICHAO_MONITOR_RECORDING_2026-09-10.md",
+      "sha256": "8d4496323ec06e7b8be1bc0bcf03b51563fd2c9e4a16d47c76956e784e0dda04",
+      "bytes": 3090
+    },
+    {
       "destination": "doc/YICHAO_ONBOARD_MOVEMENT_PROGRESS_2026-09-08.md",
       "sha256": "1c090b605ae1e3fad3437e46355091e1760d8e9850e7bf994c24d82d4fe3696c",
       "bytes": 6518
@@ -110,6 +120,11 @@
       "destination": "doc/YICHAO_PREPARATION_2026-09-08_EVENING.md",
       "sha256": "bf66a086f62e5c86b73f610311d04600edc394eca9f9eb01bd1c2dcb8569688b",
       "bytes": 3929
+    },
+    {
+      "destination": "doc/YICHAO_REBOOT_PREFLIGHT_2026-09-10.md",
+      "sha256": "c4f1e9799fc91b791b4beb375758886cff580f93384b4a989ed39e00d476ae7a",
+      "bytes": 3541
     },
     {
       "destination": "doc/YICHAO_RIGHT_FIRST_RESTART_2026-09-09.md",
@@ -152,16 +167,6 @@
       "bytes": 4324
     },
     {
-      "destination": "local_sim2sim/__pycache__/check_result.cpython-310.pyc",
-      "sha256": "a7100e077c5f8f225eed208c2013448dff516cdae16f1d39d3bb756a91738494",
-      "bytes": 3108
-    },
-    {
-      "destination": "local_sim2sim/__pycache__/run.cpython-310.pyc",
-      "sha256": "aa8efa1bb86559eae7d0e036b95f472c07ae1d9efac3b37020a3a80139d28492",
-      "bytes": 3800
-    },
-    {
       "destination": "local_sim2sim/check_result.py",
       "sha256": "0c21fd38b7d2fc7583a65e6a128223a2a68262de05e89ddf387d42f136d9e127",
       "bytes": 2914
@@ -190,46 +195,6 @@
       "destination": "local_sim2sim/setup_manifest.json",
       "sha256": "33697e6aaba7bb83a993affdc49ebcae7571616beb65fcde65e5dacf3d8ff4b8",
       "bytes": 1576
-    },
-    {
-      "destination": "tools/__pycache__/device_context_capture.cpython-310.pyc",
-      "sha256": "754fc823e7a2bf13e840998ff4346760aa8a8b3a43b4afe15dc72a4e5a54a4be",
-      "bytes": 3476
-    },
-    {
-      "destination": "tools/__pycache__/device_context_hash_remote.cpython-310.pyc",
-      "sha256": "1cb97f972457f3b185bb0d618f0379fd1eda488333d4887350b7f3644256691c",
-      "bytes": 1180
-    },
-    {
-      "destination": "tools/__pycache__/device_context_index.cpython-310.pyc",
-      "sha256": "407fda4753dccab4e69919a198ee7c0a6d3a30d6b0995e629bd5dddc51bee754",
-      "bytes": 8845
-    },
-    {
-      "destination": "tools/__pycache__/device_context_inventory_remote.cpython-310.pyc",
-      "sha256": "c7b06090905202c5f12dc434844a77b35c7b9d7470cae2ff2d09e29fae841e47",
-      "bytes": 4269
-    },
-    {
-      "destination": "tools/__pycache__/device_context_pull.cpython-310.pyc",
-      "sha256": "24e8fd6ef68ae6d211a532bab366a45f1742f4f5c583e4fa38dbfdc95bcc1f14",
-      "bytes": 4004
-    },
-    {
-      "destination": "tools/__pycache__/device_context_seed.cpython-310.pyc",
-      "sha256": "6516c9bf2c74eb60de1626aefe7d0d54dca6bbe38039337cbe0702f5d84b0887",
-      "bytes": 3760
-    },
-    {
-      "destination": "tools/__pycache__/device_context_ssh.cpython-310.pyc",
-      "sha256": "e89246ad3ddbea3f9427eea798f68c78518a9dfb5343322753da7a8c4629d75c",
-      "bytes": 1782
-    },
-    {
-      "destination": "tools/__pycache__/device_context_verify.cpython-310.pyc",
-      "sha256": "fe8708e874673bea4a46c5fe2c0ee8b125e4efe4f4ab01c97cc683539b039908",
-      "bytes": 3385
     },
     {
       "destination": "tools/device_context_capture.py",
@@ -288,8 +253,8 @@
     },
     {
       "destination": "yichao_v3_v9/README.md",
-      "sha256": "6f923e5f17bc041c09e375c300b6cb529fe563f37aadf701e11a041f9bcb036b",
-      "bytes": 7873
+      "sha256": "1cfa8dce0ad8279c999bad181cfcad89696c73325a4e66e1b71bdc6b1590698c",
+      "bytes": 7962
     },
     {
       "destination": "yichao_v3_v9/baseline/SOURCE_MANIFEST.json",
@@ -688,8 +653,8 @@
     },
     {
       "destination": "yichao_v3_v9/src/yichao_v3_v9/runtime.py",
-      "sha256": "5012cb17534fd8bc14d91d9e02c9fb286d3b66b266fc5c58d93464469fa208b3",
-      "bytes": 7118
+      "sha256": "195db638df8870c2486009791b5271f77d707142b9b0f31a1780f079a3156906",
+      "bytes": 6671
     },
     {
       "destination": "yichao_v3_v9/tests/test_features.py",
@@ -703,8 +668,8 @@
     },
     {
       "destination": "yichao_v3_v9/tests/test_runtime.py",
-      "sha256": "e795e4d35f252e77423568778c04fb63522f2c15d6238e3c63ddec4a0caa8d5b",
-      "bytes": 10179
+      "sha256": "cc20c1e18331ef6cba85b575e265bb4bb668fb8157cbc3a297fe5cc331becb02",
+      "bytes": 10974
     },
     {
       "destination": "yichao_v3_v9/tools/build_package.py",
@@ -712,5 +677,5 @@
       "bytes": 1915
     }
   ],
-  "file_count": 142
+  "file_count": 135
 }

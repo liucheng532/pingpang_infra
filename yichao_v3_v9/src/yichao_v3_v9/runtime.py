@@ -45,13 +45,6 @@ class YichaoRelayPlanner(FixedRelayPlanner):
         if self.strategy.decision is None or not self.strategy.decision['valid']:
             result['admitted'] = False
             result['reasons'] = (*result['reasons'], self.strategy.reason)
-        elif slot is self._pending_shot:
-            errors = {name: abs(float(feedback[name].base_xy[1])-self.strategy.decision['target_y'][i])
-                      for i, name in enumerate(ROBOT_ORDER)}
-            result['model_target_error_m'] = errors
-            if any(error > .06 for error in errors.values()):
-                result['admitted'] = False
-                result['reasons'] = (*result['reasons'], 'moving_to_model_targets')
         return result
 
     def _pending_result(self, slot, feedback, feedback_fallbacks, admission):
