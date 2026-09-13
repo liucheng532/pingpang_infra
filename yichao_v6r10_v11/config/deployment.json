@@ -1,0 +1,75 @@
+{
+  "schema": "v6r10-v11-deployment-v1",
+  "planner_identity": "v6r10-model630-v11-i42500",
+  "network": {
+    "ROS_MASTER_URI": "http://192.168.123.165:11311",
+    "ROS_IP": "192.168.123.165"
+  },
+  "status_topic": "/doubles/yichao_v6r10/status",
+  "monitor_port": 8090,
+  "fixed_runtime_root": "/home/odl/codebase/pingpang_doubles_v9_runtime",
+  "predictor_root": "/home/odl/codebase/pingpang_predictor_dual_v9",
+  "predictor_python": "/home/odl/miniconda3/envs/tabletennis/bin/python",
+  "predictor_entry": "scripts/run_predictor.py",
+  "runtime_python": "/home/odl/miniconda3/envs/tabletennis-active-v1/bin/python",
+  "controller_root": "/home/unitree/haoran/doubles-v11-r2i299-resume42500-dual-runtime",
+  "original_v11_launcher": "/home/odl/codebase/pingpang_doubles_v9_runtime/scripts/start_v11_dual_robots.sh",
+  "original_v11_launcher_sha256": "e2756a2c2651059222a18eea2aef72e809c285e1688b753751e406ff6927217f",
+  "ssh_key": "/home/odl/.ssh/pingpang",
+  "robots": {
+    "table_left": {
+      "actor_identity": "left",
+      "host_label": "198",
+      "ssh_host": "172.16.4.198",
+      "controller_network_ip": "192.168.124.164",
+      "policy_launcher": "start_v11_resume42500_hitteacher_198.sh",
+      "racket_hand": "right",
+      "mirror_left_hand": false
+    },
+    "table_right": {
+      "actor_identity": "right",
+      "host_label": "66",
+      "ssh_host": "172.16.4.66",
+      "controller_network_ip": "192.168.123.164",
+      "policy_launcher": "start_v11_resume42500_hitteacher_leftmirror_66.sh",
+      "racket_hand": "left",
+      "mirror_left_hand": true
+    }
+  },
+  "controller_assets": {
+    "policy/v11_resume_i42500/student_v11_r2i299_commonhold_1666_resume42500.onnx": "d7be604c882307f6951c4649607dd6a07e6dbbd31bd3d80a481920ff5f762eaa",
+    "policy/v11_resume_i42500/student_v11_r2i299_commonhold_1666_resume42500.onnx.json": "0603032faa7b0f5c2a81823a1d8db16f4689c399b5950a536cd811905acd7674",
+    "policy/v11_resume_i42500/student_iteration_042500.pt": "04461633b8ad75a2b173ceacf34257fae437cbf935f6effe8b279464586bea12",
+    "policy/v11_resume_i42500/source29_0368_upright_fk_v1.npz": "9565a8ed1ba22cfc0d759d0a8327dc7dd37989c242d4f4337dcc79c796ea3a8f",
+    "policy/v11_teacher_arm7_i15000/v11_teacher_arm7_i15000_hard1.onnx": "0cace9a4b950c82f2f5b5468f61b2d31d319518f641b5627d3bb6048514fc102",
+    "policy/v11_teacher_arm7_i15000/v11_teacher_arm7_i15000_hard1.onnx.json": "d654644c064149e7d7c41889fd9f91c069d4b0236ccc602e2bc1ff64a0012502",
+    "policy/v11_teacher_arm7_i15000/model_15000.pt": "f08fffa370e47ce783087a53534b4e69a293e60133e6b8ad3ca36b817fd4ee9a",
+    "g1_gym_deploy/scripts/deploy_policy.py": "483c64956e4ad3be551699970d976d9edcfbdfb782051168894b1d93c250b259",
+    "g1_gym_deploy/scripts/start_v11_resume42500_hitteacher_198.sh": "6aee22f3ffdc028cdf3dc91a262bf2df89f4669c3d7b8108dd3e04f25be85028",
+    "g1_gym_deploy/scripts/start_v11_resume42500_hitteacher_leftmirror_66.sh": "bb72310324a6157c5f079e1542f470df61c48f0863adbd65abb1d23866a3b71a",
+    "g1_gym_deploy/scripts/start_v9_g1_control.sh": "a06c5feee0b510ee8ea06de47250896c6ac8a2ecbeedc154b118af83c4a5ef60",
+    "g1_gym_deploy/utils/planner_ros_bridge.py": "dbdbe5d5ba62d0d6a5b1290367cd822c03812c8a7f26a8dd4e88440c3d0a3b70",
+    "g1_gym_deploy/utils/doubles_reference_scheduler.py": "37fb9cf277b27607e06a051a87813e94110e3c7824041da7fce8b2ecf260ddcd",
+    "g1_gym_deploy/utils/deployment_runner.py": "d4f105f7a73ada6fd6079dc3639897317d0a48f148703ef2b0b4e43de537260a",
+    "g1_gym_deploy/utils/joint_mapping.py": "25fbcdeaa1b3db844cf5b19859c6a8374c47cd1cd4b915f7d04403fa5b8dcd77",
+    "g1_gym_deploy/utils/left_right_mirror.py": "c3d405705d9322a1fcbebd9d0ede730bb179811b6839cbe531f0e02f36988340",
+    "unitree_sdk2/build/bin/g1_control": "85d8c638b7e80845a9213d80a29ecd47b9bc4587c7193a80fe1dc4f0a30cb838"
+  },
+  "external_controller_assets": {
+    "/home/unitree/haoran/sports-mimic-dev-camera/policy/stable/0303-best.onnx": "5a4e650813f227f704ae2040df73ece8da11dae1746bfc8b6e982c68e9efc94c",
+    "/home/unitree/haoran/doubles-v11-r2i299-resume42500-dual-runtime/data/0302_combined/dataindex.csv": "157bfe81e828f42661e3414a720791ef1968b8488841d5d354dcdc40d7726f03",
+    "/home/unitree/haoran/doubles-v11-r2i299-resume42500-dual-runtime/data/0718-move-160-80hz/dataindex.csv": "2684d5cfb1a4b9d10a4eb8df3b4a945b20662fcc06bdde599bd32da393a4e90d"
+  },
+  "embedded_controller_contract": {
+    "hit_teacher_sha256": "5a4e650813f227f704ae2040df73ece8da11dae1746bfc8b6e982c68e9efc94c",
+    "move_teacher_sha256": "5bcf39a8a27b4dd831068711b5a7b823867494087dedb6f1312d37da8e7ae2af",
+    "move_teacher_contract": "v11_commonhold_fkupright_rawwrist_r2_model299",
+    "hit_motion_manifest_sha256": "157bfe81e828f42661e3414a720791ef1968b8488841d5d354dcdc40d7726f03",
+    "move_motion_manifest_sha256": "2684d5cfb1a4b9d10a4eb8df3b4a945b20662fcc06bdde599bd32da393a4e90d"
+  },
+  "actor": {
+    "onnx": "models/model630_actor.onnx",
+    "sidecar": "models/model630_actor.onnx.json"
+  },
+  "attestation": "output/current_v11_attestation.json"
+}

@@ -1,5 +1,5 @@
 {
-  "purpose": "Yichao Planner rewrite source export; models, environments, logs and retired backups excluded",
+  "purpose": "Yichao V3+V9 and V6R10+V11 source export; models, checkpoints, environments, device copies, credentials, runtime outputs and logs excluded",
   "files": [
     {
       "destination": ".gitignore",
@@ -13,13 +13,18 @@
     },
     {
       "destination": "README.md",
-      "sha256": "4b5d338713dbe8ffbd8a15e6b03294c1966517b68a0e635bbd0f7c71aa3c5fb0",
-      "bytes": 556
+      "sha256": "78518beeeb0ca243479f812d23079c50e44754c08da7fba1bd8886f2bff543ba",
+      "bytes": 1200
     },
     {
       "destination": "doc/FIXED_VS_YICHAO_66_DIAGNOSIS_2026-09-10.md",
       "sha256": "e116d347048a5c1d76658c664ebe811e47fe262c269e298dabf45a3ab3a390e8",
       "bytes": 6389
+    },
+    {
+      "destination": "doc/V6R10_ACTOR_ONLY_V11_DEPLOYED_2026-09-13.md",
+      "sha256": "a89dafeb34a5443a51ccb627300b91c88fd3c187c2228135ab004d204861fb3d",
+      "bytes": 8886
     },
     {
       "destination": "doc/YICHAO_ACTIVE_TRIAL_2026-09-09.md",
@@ -675,7 +680,197 @@
       "destination": "yichao_v3_v9/tools/build_package.py",
       "sha256": "117f027a09489e6b99be8e5b1731469f3608a1f4c49a39ff336524554b9a7725",
       "bytes": 1915
+    },
+    {
+      "destination": "yichao_v6r10_v11/DEPLOY.md",
+      "sha256": "6861b633cd73c69302a30fd98e7479049bf261e53a71287e49e023886e0ab23c",
+      "bytes": 4461
+    },
+    {
+      "destination": "yichao_v6r10_v11/DEPLOY_MANIFEST.json",
+      "sha256": "6a7b5cef27b82451619070a6ee2139c930a25a391a827531e142e8638f920ebc",
+      "bytes": 8210
+    },
+    {
+      "destination": "yichao_v6r10_v11/README.md",
+      "sha256": "825faafc65e2592a843bc87c6c19c5d7e971af8b8289c6506f9f040f607c4f1a",
+      "bytes": 4977
+    },
+    {
+      "destination": "yichao_v6r10_v11/config/deployment.json",
+      "sha256": "ac5a0c7d0aa0ecb599fb18ef957837cce2f4af71332194620d669f8cf65adc50",
+      "bytes": 5023
+    },
+    {
+      "destination": "yichao_v6r10_v11/models/model630_actor.onnx.json",
+      "sha256": "49392acb0f2dadc3a6ebe3f7e7709b4a6e053cb1c0e88d4e4685523a15ae747f",
+      "bytes": 5950
+    },
+    {
+      "destination": "yichao_v6r10_v11/requirements.lock",
+      "sha256": "fbc862515c3d31a6fcdfcfc0417b9087f068be9cc2ee18befef25c73d06ccc07",
+      "bytes": 35
+    },
+    {
+      "destination": "yichao_v6r10_v11/scripts/create_v11_attestation.py",
+      "sha256": "55d988985af07407837ac98e8f9678e130c5423dfba72d9ea7d52f267dff18d1",
+      "bytes": 8649
+    },
+    {
+      "destination": "yichao_v6r10_v11/scripts/run_active_bootstrap.py",
+      "sha256": "8408b7856e15253cf2e2def57aa59b12c4d6f157ff40d74cf8d1a700b417e803",
+      "bytes": 7589
+    },
+    {
+      "destination": "yichao_v6r10_v11/scripts/run_v6r10_planner.py",
+      "sha256": "04f6bd51308e3a098707d7ecec62062229fe5d41ef128bd6c056193e1a22d8e2",
+      "bytes": 9328
+    },
+    {
+      "destination": "yichao_v6r10_v11/scripts/run_workstation.py",
+      "sha256": "823c60c33764a2dceb7961121aa858335b8ca76300e4d24ed592eb9ec8da1862",
+      "bytes": 12145
+    },
+    {
+      "destination": "yichao_v6r10_v11/scripts/start_v11_robots.sh",
+      "sha256": "1ca75f98e12a4fcac5ab108dd8886bae563165b8480508ea9f0157867081e510",
+      "bytes": 1710
+    },
+    {
+      "destination": "yichao_v6r10_v11/scripts/start_v6r10_workstation.sh",
+      "sha256": "a33bc77841189a287fe4db1f1c8fd1edd9fd97bba86e633d333cef346d85fb51",
+      "bytes": 497
+    },
+    {
+      "destination": "yichao_v6r10_v11/scripts/start_yichao_robots.sh",
+      "sha256": "f6d0b1b7e062b70c9852c1574e64b49d361c99abadf28c7a70c4f3476ce1c2fc",
+      "bytes": 1432
+    },
+    {
+      "destination": "yichao_v6r10_v11/scripts/start_yichao_workstation.sh",
+      "sha256": "ee671df1bdf552dd7cd1403525137f4be1c193bfa92b5fa81f80580c9c5f3a48",
+      "bytes": 616
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/__init__.py",
+      "sha256": "55e1fbac855bf0e36eb9f5471f38c08a0c3a4a806d78811cf935d51ff0bca6b6",
+      "bytes": 850
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/actor.py",
+      "sha256": "38a6a45bd8cc94abb38af99a45b8c209d2a03dcec44269357afd83da190c4766",
+      "bytes": 6667
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/attestation.py",
+      "sha256": "cb762dc4a03219ab9518e80181da1796fbeadecc1a4a475cf8b9745bd1ad77b2",
+      "bytes": 4381
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/bootstrap.py",
+      "sha256": "dc5145578038612d1b1e25f33a553ca93663c0fbdcb08213b1e5f479a5c6aff6",
+      "bytes": 1035
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/features.py",
+      "sha256": "4fadbabeaa6c00b6e20772a9707572b06dc5cd4f6f8a412ab35ba769bebc2d36",
+      "bytes": 13878
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/guard.py",
+      "sha256": "189c1638953236d1c8f0542184c59d483a97a34b38fc442089d1e5e6576227b4",
+      "bytes": 3390
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/journal.py",
+      "sha256": "49da8629fd64d4e566bcc4e4dea4a0ab29d02872eba5f14904d08b57114ec525",
+      "bytes": 2982
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/monitor.py",
+      "sha256": "7e8eefc70f5807ad371e34fc04ea1a459424f3902cbcc0128ed4c2501f1394c3",
+      "bytes": 22302
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/static/monitor.css",
+      "sha256": "6e54d65acc813a8f656c2fca05f32e9da9b7366880aa12cb594028c1011cfee2",
+      "bytes": 10009
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/static/monitor.html",
+      "sha256": "98fa972cad43b7bae8ccb1f2b7d68ae08c604a9c9078e33ca13f98e6e80f0ac3",
+      "bytes": 8246
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/static/monitor.js",
+      "sha256": "008d93b59723922920e6e04361ea56623656def5b82c304432ae366d921d1ac7",
+      "bytes": 20876
+    },
+    {
+      "destination": "yichao_v6r10_v11/src/yichao_v6r10_v11/v6r10_runtime.py",
+      "sha256": "3f19ce21831ab059ed10f3e6c86bbb2d842eb30c8eaaddf7cf0dffe85bffa923",
+      "bytes": 26590
+    },
+    {
+      "destination": "yichao_v6r10_v11/tests/conftest.py",
+      "sha256": "2dc79753979c74a30fa8a6007d43fb17b4b61565133bfb42e041d2a223a137a2",
+      "bytes": 186
+    },
+    {
+      "destination": "yichao_v6r10_v11/tests/fixtures/README.md",
+      "sha256": "e868b2e916508ae75601a5e9615063c2116e6b8c02ca60351a2093a92377ea1c",
+      "bytes": 940
+    },
+    {
+      "destination": "yichao_v6r10_v11/tests/fixtures/handoff_schema.json",
+      "sha256": "f2bf9c51e37f675cdb6e063cab325c0bf0eb569bb46c0fb104c075c3e6ed7cee",
+      "bytes": 37378
+    },
+    {
+      "destination": "yichao_v6r10_v11/tests/fixtures/joint_normalization.json",
+      "sha256": "31e60a3b3da7774cbb3aa749c54875824276b4f094485b8684029218f6d97170",
+      "bytes": 4516
+    },
+    {
+      "destination": "yichao_v6r10_v11/tests/test_actor_guard.py",
+      "sha256": "b7a23614d0557338eb1bc9e2295105a2c1444bb8857cde76cd02a2a60d75c004",
+      "bytes": 3665
+    },
+    {
+      "destination": "yichao_v6r10_v11/tests/test_features.py",
+      "sha256": "fdec63a2655aaa2982da701b340971228403a3105d88dc54d8e63ca3faf1d12b",
+      "bytes": 4432
+    },
+    {
+      "destination": "yichao_v6r10_v11/tests/test_operations.py",
+      "sha256": "23b4deddbdd033b12765d40fd472863556ad8f758c09dbbade9dca1ff6290d75",
+      "bytes": 20259
+    },
+    {
+      "destination": "yichao_v6r10_v11/tests/test_runtime.py",
+      "sha256": "77bdcaea4f165f2a3752e92f8872812ef976491d206a45336ba27a4d70e473c3",
+      "bytes": 15487
+    },
+    {
+      "destination": "yichao_v6r10_v11/tools/build_delivery_manifest.py",
+      "sha256": "25b9ea036dd76b4fd46ea9bba6d363c14f0982755f5c624222ec34b00bca8107",
+      "bytes": 1701
+    },
+    {
+      "destination": "yichao_v6r10_v11/tools/export_model630_actor.py",
+      "sha256": "27aca1162a53530ede82dc50fb27ea1b32c1fcebf4cc3f59f19f0dbf070e29ce",
+      "bytes": 5333
+    },
+    {
+      "destination": "yichao_v6r10_v11/tools/replay_actor_only.py",
+      "sha256": "b7caaea608f13f49d60f5622bcce26831e3bbbfe2f639833d8effb0e615f7210",
+      "bytes": 8736
+    },
+    {
+      "destination": "yichao_v6r10_v11/tools/verify_delivery_manifest.py",
+      "sha256": "a947d9b7cb63377760e0bfba6f1107ff4134983d485ea8f3a7b433290bf90376",
+      "bytes": 1396
     }
   ],
-  "file_count": 135
+  "file_count": 174
 }
