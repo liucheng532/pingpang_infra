@@ -1,0 +1,284 @@
+{
+  "file_count": 46,
+  "files": [
+    {
+      "bytes": 5320,
+      "executable": false,
+      "path": "DEPLOY.md",
+      "sha256": "f7d1351498d6bda004d0d2efdb3750c3b5225657820e8c3d63ec436b4b975d2d"
+    },
+    {
+      "bytes": 7045,
+      "executable": false,
+      "path": "README.md",
+      "sha256": "8020ad79e59b0709c90d59977fa7a56834fd5710421993e751fec2b552e2ef22"
+    },
+    {
+      "bytes": 5523,
+      "executable": false,
+      "path": "config/deployment.json",
+      "sha256": "c4164c3252c8f538dc7898ebd5a7f336078551e72d4062fc00d62599697ed477"
+    },
+    {
+      "bytes": 1094845,
+      "executable": false,
+      "path": "models/frozen_cbf_v7.pt",
+      "sha256": "1fa806cb071853f13aca25264c5c66934f3210db7020af901de6a8ce3359064d"
+    },
+    {
+      "bytes": 1081527,
+      "executable": false,
+      "path": "models/frozen_v7_barrier_risk.onnx",
+      "sha256": "77f68d863abd4531cd63fbf31d8052d448e37309cfefb436439cb8264d505e54"
+    },
+    {
+      "bytes": 41187,
+      "executable": false,
+      "path": "models/handoff_schema.json",
+      "sha256": "e72739b1d1157e6debbe9537d5fa740473e259e93b5ec485d061887ee7195e4a"
+    },
+    {
+      "bytes": 3043479,
+      "executable": false,
+      "path": "models/model_190.pt",
+      "sha256": "c9a568ee4ed60565578654b9999c3a22ff14d964fdb3ec994a1b8f075022088c"
+    },
+    {
+      "bytes": 2628,
+      "executable": false,
+      "path": "models/model_contract.json",
+      "sha256": "21398ad755f68a420b493e07c5811243c968dc6b777cbddab72940ba21bac5d2"
+    },
+    {
+      "bytes": 2258,
+      "executable": false,
+      "path": "models/runner_config.json",
+      "sha256": "08dd7689f5a4fcb7454e0ff6db56c6bfe37d58a45d34656fe537206538787e80"
+    },
+    {
+      "bytes": 297314,
+      "executable": false,
+      "path": "models/v7_planner_actor.onnx",
+      "sha256": "c79054c4f0a64b6fc64ad44b2308c97e7fe8854a27feecb81845f2e97f323a7f"
+    },
+    {
+      "bytes": 311552,
+      "executable": false,
+      "path": "models/v7_planner_actor_jit.pt",
+      "sha256": "3197926d5f4cd60fff0d5b3da11e7e273849c470572920a9da8dec36f6a5ff5c"
+    },
+    {
+      "bytes": 2429,
+      "executable": false,
+      "path": "output/offline_replay_20260913/model_validation.json",
+      "sha256": "0d889d5f75a4a7f9c5fee6295ae23c21980ff5bd8de349e440fd8f387c82e191"
+    },
+    {
+      "bytes": 22166,
+      "executable": false,
+      "path": "output/offline_replay_20260913/replay.jsonl",
+      "sha256": "962788145c36bca66ad0f2a8e981bb4ea1ea6a39fac20afe5c0d614ba587c291"
+    },
+    {
+      "bytes": 911,
+      "executable": false,
+      "path": "output/offline_replay_20260913/summary.json",
+      "sha256": "050b9618b09ac53268fa0f824ed7cb29861a586c6b09afa5ea0a90c7ee97bffb"
+    },
+    {
+      "bytes": 35,
+      "executable": false,
+      "path": "requirements.lock",
+      "sha256": "fbc862515c3d31a6fcdfcfc0417b9087f068be9cc2ee18befef25c73d06ccc07"
+    },
+    {
+      "bytes": 9323,
+      "executable": true,
+      "path": "scripts/create_v11_attestation.py",
+      "sha256": "a4ea0e60193a455e223fb135535d2d98882170200d9cc7e5f4510d3c2b58e4f2"
+    },
+    {
+      "bytes": 7565,
+      "executable": true,
+      "path": "scripts/run_active_bootstrap.py",
+      "sha256": "d0859c1ac0030897af46da80cb196c2544b77f3c01eac307534b4046185dd493"
+    },
+    {
+      "bytes": 10968,
+      "executable": true,
+      "path": "scripts/run_v7_planner.py",
+      "sha256": "b28cdaa6d17190078176abacbebf4dd43a8c5915e3c582e4e4459315457c8c95"
+    },
+    {
+      "bytes": 12872,
+      "executable": true,
+      "path": "scripts/run_workstation.py",
+      "sha256": "c9956d9e243cc54258885a0aebc58a3530724f2a68405015f0b18056e6c57395"
+    },
+    {
+      "bytes": 2495,
+      "executable": true,
+      "path": "scripts/start_v11_robots.sh",
+      "sha256": "0159237f86c6f35d9acb10806cf90d7fba2ee61e13ead04d99ba8a3f21735eee"
+    },
+    {
+      "bytes": 648,
+      "executable": true,
+      "path": "scripts/start_v7_workstation.sh",
+      "sha256": "1d79bd813712fd3bcde0e12ecdb55c9fbf8acf2ff3ea818e5b945664aa0039bf"
+    },
+    {
+      "bytes": 1423,
+      "executable": true,
+      "path": "scripts/start_yichao_robots.sh",
+      "sha256": "56852dff8bf5b8b29416842687587dacc41d1c83fabab025ac7692a48e9b6939"
+    },
+    {
+      "bytes": 613,
+      "executable": true,
+      "path": "scripts/start_yichao_workstation.sh",
+      "sha256": "64f94923f4dbd511533035239a00070a7ee334d0371b9e3920bb1454331770a1"
+    },
+    {
+      "bytes": 1123,
+      "executable": false,
+      "path": "src/yichao_v7_v11/__init__.py",
+      "sha256": "a91ed216cccd979965ef16111d74b5f4eef1cd050ee2b114cb9ebeabe876937d"
+    },
+    {
+      "bytes": 13561,
+      "executable": false,
+      "path": "src/yichao_v7_v11/actor.py",
+      "sha256": "d76f22a9af97f5b5cd09e1f4ac88df4a55630171d6a8ce7f36042dcf69151bf4"
+    },
+    {
+      "bytes": 5008,
+      "executable": false,
+      "path": "src/yichao_v7_v11/attestation.py",
+      "sha256": "52fa5fad5f05119f6f3946d9d88faaaf416fbffd022231a297a6f78e440e3d6f"
+    },
+    {
+      "bytes": 1029,
+      "executable": false,
+      "path": "src/yichao_v7_v11/bootstrap.py",
+      "sha256": "889e4d27bfda13d1f7e9d55e439f6d74514d6e7ca12489f23e1d7f3d54715c01"
+    },
+    {
+      "bytes": 11051,
+      "executable": false,
+      "path": "src/yichao_v7_v11/features.py",
+      "sha256": "fccdf0a9731d21e6fdf9db04587bbc68aa31b2870c8a12ade7f1adb9d8e3eb58"
+    },
+    {
+      "bytes": 7654,
+      "executable": false,
+      "path": "src/yichao_v7_v11/guard.py",
+      "sha256": "24275aaafbf07bf403333db930310ea5f678821135477ff5c4cc5dc538a6530a"
+    },
+    {
+      "bytes": 2979,
+      "executable": false,
+      "path": "src/yichao_v7_v11/journal.py",
+      "sha256": "1651cba2b303cce031056bb3e05da76761089396d667b03ed21bb7198f034e3f"
+    },
+    {
+      "bytes": 37282,
+      "executable": false,
+      "path": "src/yichao_v7_v11/monitor.py",
+      "sha256": "0f638f04bac52f3f64f823f9dc204b78463d1c9b654a7608bdfdd60b2e643c86"
+    },
+    {
+      "bytes": 12091,
+      "executable": false,
+      "path": "src/yichao_v7_v11/static/monitor.css",
+      "sha256": "43a834eac2144741a3e047a3f18b3c75b70e36be87dd28876e7e38a260714ea2"
+    },
+    {
+      "bytes": 9104,
+      "executable": false,
+      "path": "src/yichao_v7_v11/static/monitor.html",
+      "sha256": "7242529992fe31141990380cb4eaa355940c42bac5b94f317ffb6af7ccb32b62"
+    },
+    {
+      "bytes": 25578,
+      "executable": false,
+      "path": "src/yichao_v7_v11/static/monitor.js",
+      "sha256": "29fb1b0d33eef311cc86f436343581007c137eee26fe72b3d6f8e55de7e7d091"
+    },
+    {
+      "bytes": 29601,
+      "executable": false,
+      "path": "src/yichao_v7_v11/v7_runtime.py",
+      "sha256": "02c70bd714ff9ee65ec5b39067fdceb66493519e79c78ed68a96691b94374354"
+    },
+    {
+      "bytes": 186,
+      "executable": false,
+      "path": "tests/conftest.py",
+      "sha256": "2dc79753979c74a30fa8a6007d43fb17b4b61565133bfb42e041d2a223a137a2"
+    },
+    {
+      "bytes": 333,
+      "executable": false,
+      "path": "tests/fixtures/README.md",
+      "sha256": "f8e1db9d044aac7b7641650ceee79e5b6ec181381d5afefec6c132d1f10f2b8f"
+    },
+    {
+      "bytes": 2002,
+      "executable": false,
+      "path": "tests/fixtures/v7_two_ball.jsonl",
+      "sha256": "83d54239616cdff1ab985142f5e2206d554cd61026fe27b1a063f792ea79b77e"
+    },
+    {
+      "bytes": 6193,
+      "executable": false,
+      "path": "tests/test_actor_guard.py",
+      "sha256": "cede2044a8466dadde46c4daa29323e7e2cc5c16ca7c92d7c72c33fbfd9c0441"
+    },
+    {
+      "bytes": 3710,
+      "executable": false,
+      "path": "tests/test_features.py",
+      "sha256": "42070ef3702f277cdd41a7533f64549573e672548b5837185dba022e0d3b429a"
+    },
+    {
+      "bytes": 29325,
+      "executable": false,
+      "path": "tests/test_operations.py",
+      "sha256": "8a77584d4b1472fc829d79bc8b9a6983f0a7430df5893009a074306b9b76ed04"
+    },
+    {
+      "bytes": 19522,
+      "executable": false,
+      "path": "tests/test_runtime.py",
+      "sha256": "7513d4964bf4452bda4609802ad774effd9fd2b7d1754e999dabb041dbbad502"
+    },
+    {
+      "bytes": 1695,
+      "executable": true,
+      "path": "tools/build_delivery_manifest.py",
+      "sha256": "17ce2ccf7219123ce4a679f9e3afbd711d9806c9efaae404dd530319cd65bf6f"
+    },
+    {
+      "bytes": 6012,
+      "executable": false,
+      "path": "tools/replay_v7.py",
+      "sha256": "89ff715d145cbe5606a119d53d8b27f205ef54946613fe0bb2e482230a32852e"
+    },
+    {
+      "bytes": 5187,
+      "executable": false,
+      "path": "tools/validate_models.py",
+      "sha256": "98a329a516cf5f3770d9dd91f2b298e306d7d99113b5c124866c026058c1eb07"
+    },
+    {
+      "bytes": 1393,
+      "executable": true,
+      "path": "tools/verify_delivery_manifest.py",
+      "sha256": "5816b66d6fce30ea6947791278b330b97c257a0ffec32e0344a35e3916a38ba7"
+    }
+  ],
+  "schema": "v7-v11-delivery-manifest-v1",
+  "target": "/home/odl/codebase/yichao_v7_v11_adapter",
+  "total_bytes": 6195745
+}

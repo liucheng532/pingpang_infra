@@ -1,0 +1,95 @@
+{
+  "actor": {
+    "activation": "elu",
+    "class_name": "MLPModel",
+    "distribution_cfg": {
+      "class_name": "GaussianDistribution",
+      "init_std": 0.15,
+      "std_type": "log"
+    },
+    "hidden_dims": [
+      256,
+      256
+    ],
+    "obs_normalization": true
+  },
+  "algorithm": {
+    "actor_std_max": 0.5,
+    "actor_std_min": 0.08,
+    "adaptive_executed_action_loss": true,
+    "class_name": "doubles_planner.safe_rl:CBFRL",
+    "clip_param": 0.2,
+    "cost_critic_learning_rate": 0.0003,
+    "cost_critic_warmup_updates": 10,
+    "cost_ema_beta": 0.9,
+    "cost_gamma": 0.99,
+    "cost_lam": 0.95,
+    "cost_limit": 0.06,
+    "cost_value_loss_coef": 1.0,
+    "desired_kl": 0.01,
+    "entropy_coef": 0.005,
+    "executed_action_activation_high": 0.5,
+    "executed_action_activation_low": 0.1,
+    "executed_action_loss_coef": 0.05,
+    "executed_action_loss_max_coef": 0.5,
+    "executed_action_loss_type": "huber",
+    "gamma": 0.99,
+    "lagrangian_init": 0.1,
+    "lagrangian_lr": 0.05,
+    "lagrangian_max": 100.0,
+    "lam": 0.95,
+    "learning_rate": 0.0003,
+    "max_grad_norm": 1.0,
+    "normalize_advantage_per_mini_batch": false,
+    "num_learning_epochs": 5,
+    "num_mini_batches": 8,
+    "rnd_cfg": null,
+    "schedule": "adaptive",
+    "share_cnn_encoders": false,
+    "symmetry_cfg": null,
+    "use_clipped_value_loss": true,
+    "value_loss_coef": 1.0
+  },
+  "barrier_violation_training_weight": 0.0,
+  "check_for_nan": true,
+  "clip_actions": 10.0,
+  "cost_critic": {
+    "activation": "elu",
+    "class_name": "MLPModel",
+    "distribution_cfg": null,
+    "hidden_dims": [
+      256,
+      256
+    ],
+    "obs_normalization": true
+  },
+  "critic": {
+    "activation": "elu",
+    "class_name": "MLPModel",
+    "distribution_cfg": null,
+    "hidden_dims": [
+      256,
+      256
+    ],
+    "obs_normalization": true
+  },
+  "experiment_name": "pingpang_doubles_high_level",
+  "logger": "tensorboard",
+  "max_iterations": 2000,
+  "nominal_risk_training_weight": 0.0,
+  "num_steps_per_env": 8,
+  "obs_groups": {
+    "actor": [
+      "policy"
+    ],
+    "cost_critic": [
+      "critic_safe"
+    ],
+    "critic": [
+      "critic_safe"
+    ]
+  },
+  "run_name": "centralized_dual_command",
+  "save_interval": 10,
+  "seed": 10000
+}

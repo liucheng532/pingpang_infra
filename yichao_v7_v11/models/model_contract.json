@@ -1,0 +1,49 @@
+{
+  "format": "yichao-v7-model190-frozen-cbf-onnx-v1",
+  "planner_identity": "v7-model190-cbf-v11-i42500-f052ebf",
+  "handoff_commit": "f052ebfc51239e83ff58c2067bbb30dd77292e59",
+  "training_audit_commit": "1a8e81d0c9ed2a0a027074d3ab2ddfb44e0f4fbc",
+  "model_order": ["left", "right"],
+  "ros_mapping": {"left": "table_left", "right": "table_right"},
+  "actor_input_dim": 29,
+  "actor_output_dim": 2,
+  "safe_input_dim": 87,
+  "actor_observation_schema_hash": "6f635a3cc33ef827b820f40e27087868d8af60f081ab2f835c4a94a9a26a1cfc",
+  "safe_observation_schema_hash": "29bcbcd34b8b41c9720381488d9b70615bce63a9e284dcdacba5786c4652cc2d",
+  "action_schema_hash": "0c8a9f35a758e664d616af0d94a622c414fb3257c31585698d124c1c23838330",
+  "action_names": ["left_base_target_y", "right_base_target_y"],
+  "action_bounds_m": [-0.9, 0.9],
+  "actor_onnx_sha256": "c79054c4f0a64b6fc64ad44b2308c97e7fe8854a27feecb81845f2e97f323a7f",
+  "actor_jit_sha256": "3197926d5f4cd60fff0d5b3da11e7e273849c470572920a9da8dec36f6a5ff5c",
+  "model190_sha256": "c9a568ee4ed60565578654b9999c3a22ff14d964fdb3ec994a1b8f075022088c",
+  "barrier_onnx_sha256": "77f68d863abd4531cd63fbf31d8052d448e37309cfefb436439cb8264d505e54",
+  "barrier_checkpoint_sha256": "1fa806cb071853f13aca25264c5c66934f3210db7020af901de6a8ce3359064d",
+  "handoff_schema_sha256": "e72739b1d1157e6debbe9537d5fa740473e259e93b5ec485d061887ee7195e4a",
+  "risk_threshold": 0.3027352380752564,
+  "candidate_radius_normalized": 1.25,
+  "candidate_grid_points": 51,
+  "candidate_count_full": 2603,
+  "projection_mode": "hitter-priority",
+  "hitter_weight": 100.0,
+  "non_hitter_weight": 1.0,
+  "batch_dynamic": true,
+  "bundle_assets": {
+    "v7_planner_actor.onnx": "c79054c4f0a64b6fc64ad44b2308c97e7fe8854a27feecb81845f2e97f323a7f",
+    "v7_planner_actor_jit.pt": "3197926d5f4cd60fff0d5b3da11e7e273849c470572920a9da8dec36f6a5ff5c",
+    "model_190.pt": "c9a568ee4ed60565578654b9999c3a22ff14d964fdb3ec994a1b8f075022088c",
+    "frozen_v7_barrier_risk.onnx": "77f68d863abd4531cd63fbf31d8052d448e37309cfefb436439cb8264d505e54",
+    "frozen_cbf_v7.pt": "1fa806cb071853f13aca25264c5c66934f3210db7020af901de6a8ce3359064d",
+    "handoff_schema.json": "e72739b1d1157e6debbe9537d5fa740473e259e93b5ec485d061887ee7195e4a",
+    "runner_config.json": "08dd7689f5a4fcb7454e0ff6db56c6bfe37d58a45d34656fe537206538787e80"
+  },
+  "parity": {
+    "passed": true,
+    "threshold": 0.00002,
+    "maximum_errors": {
+      "actor": 0.000003337860107421875,
+      "cbf_head_probabilities": 0.000004887580871582031,
+      "cbf_member_risk": 0.000004887580871582031,
+      "cbf_conservative_risk": 0.0000019073486328125
+    }
+  }
+}

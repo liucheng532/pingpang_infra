@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V7 / Frozen CBF 执行观测台</title>
+  <link rel="stylesheet" href="/monitor.css">
+  <script defer src="/monitor.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">DOUBLES LAB / EXECUTION OBSERVATORY</p>
+      <h1>V7 <span>Frozen CBF 执行观测台</span></h1>
+      <p class="subtitle">看清 Actor、V7 CBF、hard guard、双侧 ACK 与 V11 实际执行。</p>
+    </div>
+    <div class="header-status">
+      <span id="connection" class="badge">等待连接</span>
+      <span id="view-mode" class="badge">实时视图</span>
+      <span id="planner-mode" class="badge">等待 Planner</span>
+      <span class="readonly">只读控制链路 · 不下发机器人运动指令</span>
+    </div>
+  </header>
+  <main>
+    <div id="error" class="notice error" hidden></div>
+
+    <section class="transport panel" aria-label="录制与回放">
+      <div class="transport-row">
+        <div class="record-status"><i id="record-dot"></i><strong id="record-state">等待录制状态</strong><small id="record-count">服务器记录原始消息，浏览器关闭不影响录制</small></div>
+        <div class="button-row"><button id="record-start">开始新录制</button><button id="record-stop">停止并保存</button><button id="live" class="primary">返回实时</button><button id="freeze">暂停画面</button></div>
+      </div>
+      <div class="playback-row">
+        <label>已保存测试 <select id="recordings"><option value="">选择一段测试记录</option></select></label><button id="refresh-recordings">刷新</button><button id="load-recording">加载回放</button><a id="download" class="button disabled" href="#">下载原始消息</a><span class="spacer"></span><button id="play" disabled>播放</button><label>速度 <select id="speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+      </div>
+      <div class="scrub-row"><span id="play-time" class="mono">00:00.0 / 00:00.0</span><input id="scrub" type="range" min="0" max="0" step="any" value="0" disabled aria-label="回放时间"><span id="frame-label" class="mono">等待数据</span></div>
+    </section>
+
+    <section class="session-strip" aria-label="当前上下文">
+      <div><small>PLANNER SESSION</small><strong id="session" class="mono">无会话</strong></div>
+      <div><small>来球 / SHOT</small><strong id="shot" class="mono">无有效来球</strong></div>
+      <div><small>Fixed 击球者</small><strong id="hitter">未知</strong></div>
+      <div><small>当前原因</small><strong id="reason">等待输入</strong></div>
+      <div><small>双侧 STAGE ACK</small><strong id="pair-ack">未开始</strong></div>
+    </section>
+
+    <div class="main-grid">
+      <section class="panel scene-panel">
+        <div class="section-heading"><div><p class="eyebrow">01 / SPACE</p><h2>位置与应用目标</h2></div><span id="scene-context" class="small">Predictor origin 坐标 · 米</span></div>
+        <canvas id="scene" aria-label="球台、双机位置和 Actor 应用目标"></canvas>
+        <div class="legend"><span><b class="key circle"></b>Controller 位置</span><span><b class="key outline"></b>仅 torso 定位</span><span><b class="key square"></b>已发布目标</span><span><b class="key dashed"></b>guard 应用目标</span></div>
+        <p class="footnote">球台为标称示意，不参与控制。命令 ACK 代表 Controller 已接受，不代表 pelvis 已物理到位。</p>
+      </section>
+
+      <section class="panel decision-panel" aria-label="左右机器人 Y 对照">
+        <div class="section-heading"><div><p class="eyebrow">02 / COMMAND + POSITION</p><h2>双侧指令与实时位置</h2></div><span class="small">198 / left　·　66 / right</span></div>
+        <div class="value-pair value-columns"><div class="left-text">198 · Yleft</div><div class="right-text">66 · Yright</div></div>
+        <div class="planner-values">
+          <div class="value-group"><h3>Rule-based command Y <span>原始 Fixed 指令</span></h3><div class="value-pair"><div><strong id="fixed-y-left" class="left-text">--</strong></div><div><strong id="fixed-y-right" class="right-text">--</strong></div></div><small id="fixed-context">等待 Rule-based command</small></div>
+          <div class="value-group guard-values"><h3>RL Planner command Y <span id="guard-state">等待决策</span></h3><div class="value-pair"><div><strong id="applied-y-left" class="left-text">--</strong></div><div><strong id="applied-y-right" class="right-text">--</strong></div></div><small id="decision-context">等待 RL Planner command</small></div>
+          <div class="value-group position-values"><h3>实时位置 Y</h3><div class="value-pair"><div><strong id="position-y-left" class="left-text">--</strong></div><div><strong id="position-y-right" class="right-text">--</strong></div></div><small id="position-context">等待定位</small></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="robot-grid"><section id="robot-left" class="panel robot-card left"></section><section id="robot-right" class="panel robot-card right"></section></div>
+
+    <section class="panel phase-flow-panel" aria-label="左右 Controller phase 状态流">
+      <div class="section-heading"><div><p class="eyebrow">03 / CONTROLLER PHASE FLOW</p><h2>Left / Right Phase 状态流</h2></div><div class="phase-flow-actions"><span id="phase-mode" class="small">实时最近 30 秒</span><button id="phase-range" disabled>切换全程</button></div></div>
+      <div class="phase-flow-scroll" tabindex="0" aria-label="可横向滚动的双机阶段时间轴"><div id="phase-lanes" class="phase-lanes"><p class="empty">等待 Controller state</p></div></div>
+      <p class="footnote">只画实际收到的 Controller phase；超过 250 ms 无状态即显示 STALE，未知 phase 显示 UNKNOWN。悬停 segment 查看原始上下文。</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><div><p class="eyebrow">04 / MOTION OVER TIME</p><h2>实际 Y 与目标 Y</h2></div><div class="legend"><span class="left-text">198 / left</span><span class="right-text">66 / right</span><span>实线：位置 · 虚线：下发目标</span></div></div>
+      <canvas id="trajectory" aria-label="最近三十秒位置和目标曲线"></canvas>
+      <p class="footnote">仅绘制新鲜有效数据，缺测处断线；原始日志仍保存 Monitor 实际收到的每条消息。</p>
+    </section>
+
+    <div class="bottom-grid">
+      <section class="panel"><div class="section-heading"><div><p class="eyebrow">05 / HANDOFF</p><h2>阶段、ACK 与故障事件</h2></div><small>最近 120 次变化</small></div><div id="events" class="event-list"><p class="empty">等待状态变化</p></div></section>
+      <section class="panel"><div class="section-heading"><div><p class="eyebrow">06 / DATA QUALITY</p><h2>当前数据可靠吗？</h2></div></div><div id="quality-summary" class="quality-summary">等待数据</div><div class="table-scroll"><table><thead><tr><th>输入</th><th>Hz</th><th>接收龄</th><th>序号缺口 / 回退 / 会话切换</th></tr></thead><tbody id="quality"></tbody></table></div></section>
+    </div>
+
+    <section class="panel">
+      <div class="section-heading"><div><p class="eyebrow">07 / SHOT HISTORY</p><h2>最近 V7 Actor / CBF 决策</h2></div><small>同 session / sequence 不重复</small></div>
+      <div class="table-scroll"><table><thead><tr><th>决策</th><th>拍次</th><th>Actor raw</th><th>Actor / m</th><th>CBF / m</th><th>CBF risk</th><th>hard-guard / m</th><th>间距</th><th>延迟</th><th>结论</th></tr></thead><tbody id="decisions"></tbody></table></div>
+    </section>
+
+    <details class="panel feature-panel"><summary>展开 29D Actor / 87D CBF 特征</summary><div class="feature-grid"><div><h3>29D Actor observation</h3><pre id="actor-features">暂无决策</pre></div><div><h3>87D safe observation</h3><pre id="safe-features">暂无决策</pre></div></div></details>
+    <details class="panel raw-panel"><summary>展开本帧原始数据</summary><label>消息来源 <select id="raw-topic"><option value="all">全部</option><option value="planner">Planner / Actor</option><option value="command/table_left">198 指令</option><option value="state/table_left">198 状态</option><option value="torso/table_left">198 torso</option><option value="command/table_right">66 指令</option><option value="state/table_right">66 状态</option><option value="torso/table_right">66 torso</option><option value="ball">球预测</option></select></label><pre id="raw">暂无数据</pre></details>
+    <footer><span>V7 MODEL190 + FROZEN CBF / V11 i42500 / f052ebf</span><span>CBF 为 learned risk projection；独立 0.50 m hard guard · 软件观测不代替现场安全判断</span></footer>
+  </main>
+</body>
+</html>
