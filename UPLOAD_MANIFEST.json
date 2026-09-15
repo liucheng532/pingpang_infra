@@ -1,5 +1,5 @@
 {
-  "purpose": "Yichao V3+V9, V6R10+V11 and V7+V11 source export; models, checkpoints, environments, device copies, credentials, runtime outputs and logs excluded",
+  "purpose": "Yichao V3+V9, V6R10+V11 and V7+V11 source export, plus the deployed V11 robot runtime (g1_gym_deploy) as run on table_right/table_left; models, checkpoints, environments, device copies, credentials, runtime outputs and logs excluded",
   "files": [
     {
       "destination": ".gitignore",
@@ -250,6 +250,411 @@
       "destination": "tools/device_context_verify.py",
       "sha256": "25de286135a632836d7731bb8d7ac4113477269e00520dfe2e5e13c352b1b16b",
       "bytes": 3858
+    },
+    {
+      "destination": "v11_runtime_deployed/README.md",
+      "sha256": "796171e49e2d4b6cf1e480718d22771847a8dc6ca736adc38fdb75381733413d",
+      "bytes": 1880
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/CMakeLists.txt",
+      "sha256": "63a9c55b79b54c8fc15d2b9e41eda58b5135b4711bb4e4f7ea384f6fb2dcc283",
+      "bytes": 1913
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/RAW_BALL_ID_FIX.md",
+      "sha256": "e08d107c36b03d53898debebb89dc8a48aca4f101f66b7906d938c201b488c36",
+      "bytes": 1389
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/README_student_1666.md",
+      "sha256": "e56cd3e5259d529b131be332fe86c8e214d9db26e6414e6d5136368ad1f32504",
+      "bytes": 2966
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/RETURN_POSE_SYNC_FIX.md",
+      "sha256": "bd528d771babff69d5360d25ece60e1426c0550b1b56e8b1eae75455a41e0c3f",
+      "bytes": 2177
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/V9_STUDENT_HANDOFF.md",
+      "sha256": "6d211f4296d8e716284810aefc82e80d51ca8dca2b1ba21238b71ab6b37eb64a",
+      "bytes": 10641
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/assets/common_hold/source29_0368_upright_fk_v1.contract.json",
+      "sha256": "b20e03a83978641cb49a8c1a533ebe52688ac4d75ffc4cac67b46669bbcc82c9",
+      "bytes": 2458
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/assets/common_hold/source29_0368_upright_fk_v1.npz",
+      "sha256": "9565a8ed1ba22cfc0d759d0a8327dc7dd37989c242d4f4337dcc79c796ea3a8f",
+      "bytes": 2182
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/autostart/start_controller.sh",
+      "sha256": "f16e6531c37e99174024f482843821d2e2486e4da1cfb6e0c981a909f2609a06",
+      "bytes": 148
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/autostart/start_unitree_sdk.sh",
+      "sha256": "f819945aa09cb799b44fc3676adc2ed046f951f0320c0d484922ba4433f3d7d5",
+      "bytes": 233
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/docker/Dockerfile",
+      "sha256": "a695728031dadaf8db97204f8eea2c4c7fa6d9df740a0e502946c58a1867fe2d",
+      "bytes": 6479
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/docker/Makefile",
+      "sha256": "aedcc5b627d6483a179369c85cd9b0cc87071fd21fd184a28ab0cbbae474f133",
+      "bytes": 1283
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/docker/entrypoint.sh",
+      "sha256": "0d1ecc461ba7646d4cea71220683fb403e5e7bfee30a3bf003ae95b9cab77a24",
+      "bytes": 43
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/docker/unzip_image.sh",
+      "sha256": "dc7b30ef736028c5de70224d59ef21c8b1fa359c55765b95e45e280a261256a5",
+      "bytes": 48
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/docker/zip_image.sh",
+      "sha256": "ac3a375e33e74357cc06be2b4bfb2070b34cb44534af7122896f5e56be8f07ed",
+      "bytes": 79
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/envs/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/envs/history_wrapper.py",
+      "sha256": "8a36c36dcab8172f83a910482063dcddaa5663d9c7e8760b3fda61e4d7ecce9b",
+      "bytes": 7822
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/envs/lcm_agent.py",
+      "sha256": "3bae5b8bb5e9267f1b9fbb945937324667d72254b8721509e4e5f2251e48af8a",
+      "bytes": 46574
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/installer/install_deployment_code.sh",
+      "sha256": "ed8961a23c019cc1c6beff83e908074b876151c877968ab669a83b6252c1e79e",
+      "bytes": 654
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/lcm_types/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/lcm_types/body_control_data_lcmt.lcm",
+      "sha256": "c5a011ef38a62cbf45cd74d9e4fc384d0f06a53ceea199862a3c6b6805b1f22b",
+      "bytes": 95
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/lcm_types/body_control_data_lcmt.py",
+      "sha256": "0214fd4c42bf0d10b9630947cce98c0c3f2b091116cb49fd99d2ec7f009cc035",
+      "bytes": 2310
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/lcm_types/pd_tau_targets_lcmt.lcm",
+      "sha256": "9f5cf5fee02b216d0803e9ba3c5e505d8a3bd8425344c66069fe913a4ee63a95",
+      "bytes": 101
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/lcm_types/pd_tau_targets_lcmt.py",
+      "sha256": "1869cc0f28221cb496373461d3ff02f0399ff49b97e64fc4e232ec28d1c632f8",
+      "bytes": 2313
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/lcm_types/rc_command_lcmt.lcm",
+      "sha256": "f3263cece8e9868a4d4284dfc7ada385a9260405c05773df994eb36cfa428de9",
+      "bytes": 326
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/lcm_types/rc_command_lcmt.py",
+      "sha256": "18aa78e4fa55c3b396d09ccefde975ad7f4ae8bef0488daa7b2b5c2f94caec4b",
+      "bytes": 3595
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/lcm_types/state_estimator_lcmt.lcm",
+      "sha256": "b81b161da348779a1d99a97b27e3e3354b23e07497d861bdf4ea81e970cee635",
+      "bytes": 275
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/lcm_types/state_estimator_lcmt.py",
+      "sha256": "f9b2656c88d82963dcfca937db18e9a91c9bbcef3b1808f3f6fa8b934f6ee0fe",
+      "bytes": 4113
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/analyze_ball_racket_distance.py",
+      "sha256": "b3e9a36337a84ae1afcfb39485fed42c842f04ad25cab98f35e9b39f216d8db1",
+      "bytes": 4456
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/deploy_policy.py",
+      "sha256": "483c64956e4ad3be551699970d976d9edcfbdfb782051168894b1d93c250b259",
+      "bytes": 37469
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/export_student_onnx.py",
+      "sha256": "977cb279f617a90c0b37a1552de5a1371a298861730e44570b376e567b6a8f87",
+      "bytes": 7794
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/export_v11_student_onnx.py",
+      "sha256": "d546f6ccdc3f4cbc68a81cbd3b991fc3aabd0b299df0d6851db5b3466b90b502",
+      "bytes": 11620
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/send_to_unitree.sh",
+      "sha256": "9787645dbc6d50d9f012efa60f8d55ee1f17c12bc16a8974d4445d6930935e97",
+      "bytes": 921
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/start_66_native_no_mirror.sh",
+      "sha256": "d1af12b40ae2622abf7319e4105b292c8b0b9604d7b6b9f639d4611eab661f5e",
+      "bytes": 1401
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/start_v10_i25000_hitteacher_198.sh",
+      "sha256": "3cdedb8849747fd12c59dc13ccf0d4b7fce8ad9a4c31db28bd2c971d0e6802c7",
+      "bytes": 2845
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/start_v10_i25000_hitteacher_leftmirror_66.sh",
+      "sha256": "a26db775e2748fef8d874da3c2ff450e5c6fa4c0838c55119ff83873e5d40df2",
+      "bytes": 2792
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/start_v11_resume42500_hitteacher_198.sh",
+      "sha256": "6aee22f3ffdc028cdf3dc91a262bf2df89f4669c3d7b8108dd3e04f25be85028",
+      "bytes": 3123
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/start_v11_resume42500_hitteacher_leftmirror_66.sh",
+      "sha256": "bb72310324a6157c5f079e1542f470df61c48f0863adbd65abb1d23866a3b71a",
+      "bytes": 3068
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/start_v9_canonical_left_test.sh",
+      "sha256": "00693051bc3c9c2d31d765cbe6f8dd35a9dd7291e3a459e21f68764d2cef11aa",
+      "bytes": 1487
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/start_v9_g1_control.sh",
+      "sha256": "a06c5feee0b510ee8ea06de47250896c6ac8a2ecbeedc154b118af83c4a5ef60",
+      "bytes": 435
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/start_v9_policy.sh",
+      "sha256": "7a67925791bf0012d10d2a96d2e58a543e8b1e7ca158fae680b3e8512e8d0880",
+      "bytes": 2066
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/scripts/test.py",
+      "sha256": "026c76c81539442cda6e72f9ccb6bde233c3f630ce04f3c38b7e312d950fc888",
+      "bytes": 97
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/setup.py",
+      "sha256": "0793947e79a5d8972a3253b4e5d8c04f1dcb5b3bf1c29e13ad8ce974fb9928a6",
+      "bytes": 326
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/check_camera_msgs.py",
+      "sha256": "dc0090a7b773d033f4b0886c30cc8c56616721aef8c7b08e7c5ab10f99f85ba9",
+      "bytes": 5557
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_ball_racket_diagnostics.py",
+      "sha256": "3efffbcc118f28152ac57f1fa98485278f8d576fcf38aeac03b470b2aa1f5d38",
+      "bytes": 3306
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_canonical_hardware_launcher.py",
+      "sha256": "ad24ad01912198e2c674f77c8694a634676f11d975d7f2fa14226a95edcaa1a1",
+      "bytes": 14977
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_fresh_observation_loop.py",
+      "sha256": "5245ebb07df0b1b0ab9374f8664daa0f71951365664b29610b5eeebef74a8e0a",
+      "bytes": 3988
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_hit_teacher_override.py",
+      "sha256": "326698f9ab22d1dfa0c599ab29cb35a933b0f8fdf2e8ce4dc7883ef34c4bbd17",
+      "bytes": 2991
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_left_right_mirror.py",
+      "sha256": "1653d9ecff519f6c4ccbe21b40bb2d8e1caef87b23de31a9f8ad9c1c615754ae",
+      "bytes": 33151
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_planner_ros_bridge.py",
+      "sha256": "832650ffc641a01a894e83ac5bbc4b932dea65ac57e0f12d77a6b1d0f290e3f8",
+      "bytes": 16709
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_raw_ball_diagnostics.py",
+      "sha256": "8c2d4376882c59e2a65d1b536fb2e2f5321fd81c526165ee6865704ff495b834",
+      "bytes": 2372
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_return_pose_sync.py",
+      "sha256": "506e18a3a180414d5ccb7cca27312aa064fdc13fa7b5fffa7e488d87b63ee337",
+      "bytes": 6905
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_runtime_motion_config.py",
+      "sha256": "1c13fe15fe522eb28cc8e5d1661a15f7df13fadacb92e9b985b7debd11e4cb32",
+      "bytes": 3158
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_startup_roles.py",
+      "sha256": "e831abee8045c59ea51d1b56a7101a5802bc5a34450a8d4114e92dd4867a03e1",
+      "bytes": 6216
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_student_deploy.py",
+      "sha256": "27c833a446f5d2d943dc0a1bd5f22e52aa773b5cea98f19302fbae3126b68d1d",
+      "bytes": 57282
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/tests/test_v11_export_and_contract.py",
+      "sha256": "ca05680d3dcc4f22373800931296ff886884ee003e8b6a4fb5cc16792b074152",
+      "bytes": 2052
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/async_deploy_recorder.py",
+      "sha256": "9ac37dd8a2d5ef44a199c15d344f65b39f9ebe4d02317edfa640eca65ce79a7c",
+      "bytes": 22103
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/ball_racket_diagnostics.py",
+      "sha256": "2475e29eb45ab784dbffc14fa5e181752d1b416067ba160450a9c02d97b9e4e7",
+      "bytes": 9469
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/cheetah_state_estimator.py",
+      "sha256": "9b22f9b98419dec10cb9cba5f32cb82f3928bbbfee1b03cf8e9ab3ebc46697d8",
+      "bytes": 8532
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/command_profile.py",
+      "sha256": "4cdc4a9e745113c3f79ef39fbc468c028a6821a69dca11e9ede3c82220602b2c",
+      "bytes": 1584
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/data_utils.py",
+      "sha256": "de673d81399c66a05b56ab941be6b543db5f438aa9b5cc3a6fc37a202cb91199",
+      "bytes": 12306
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/deployment_runner.py",
+      "sha256": "d4f105f7a73ada6fd6079dc3639897317d0a48f148703ef2b0b4e43de537260a",
+      "bytes": 12429
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/doubles_reference_scheduler.py",
+      "sha256": "37fb9cf277b27607e06a051a87813e94110e3c7824041da7fce8b2ecf260ddcd",
+      "bytes": 46683
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/g1_pelvis_pose.py",
+      "sha256": "4b5c0229451c1e5d77d72fdedfb6fd3e04dc1a3b1dddf3acf2b11c315c016af6",
+      "bytes": 3938
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/hit_teacher_override_policy.py",
+      "sha256": "433850db76b73dab2e9b8af66b73db0909ab46b329ca435bbd20d25862754a9c",
+      "bytes": 6259
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/joint_mapping.py",
+      "sha256": "25fbcdeaa1b3db844cf5b19859c6a8374c47cd1cd4b915f7d04403fa5b8dcd77",
+      "bytes": 2145
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/left_right_mirror.py",
+      "sha256": "c3d405705d9322a1fcbebd9d0ede730bb179811b6839cbe531f0e02f36988340",
+      "bytes": 19176
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/logger.py",
+      "sha256": "12caaa45ac4b135567179521797660ea256571560ff1dcc675e5c3724c08fb2d",
+      "bytes": 2144
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/math.py",
+      "sha256": "454dfe94703fdfe3202c94fc84e907ced354bfbf91d20aaa66274447def12d0e",
+      "bytes": 9004
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/mirrored_reference_scheduler.py",
+      "sha256": "554072fa9bd7c257cd7960ac91787590c8d7df5356150aac29ec3204b084c32d",
+      "bytes": 6821
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/network_config_unitree.py",
+      "sha256": "92bcd6c2ba74e0a12923d3bca4a211ca1dab352306a123e769b47c51211688e7",
+      "bytes": 1986
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/planner_ros_bridge.py",
+      "sha256": "9ccadf4cca8043c4bb8f54caa82f01fa2109006a27e248c517a371f493166e01",
+      "bytes": 20439
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/raw_ball_diagnostics.py",
+      "sha256": "fce029bcb55e74befbea89e923790710f292d7f519ac0b2a2d1173a72a83a869",
+      "bytes": 6861
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/right_side_right_hand.py",
+      "sha256": "2d0f4821310745684e3b0d19218193b56066b3ddd2de964d5d1c9000ba4df3e5",
+      "bytes": 5245
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/runtime_motion_config.py",
+      "sha256": "eac86fcc1ec221dfc6d849370661aeeadb8fe2b0f023742f1924fa3445be7321",
+      "bytes": 2832
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/v01_hit_residual_adapter.py",
+      "sha256": "486b2acbaa5330632eedb44357f895e03c6ba0a42a12854dea28d6fbd95c8639",
+      "bytes": 6506
+    },
+    {
+      "destination": "v11_runtime_deployed/g1_gym_deploy/utils/v11_teacher_residual_adapter.py",
+      "sha256": "24a50debec52e56867f5d94ce26d5a989d8145ff7c304205e031b509ff2600f2",
+      "bytes": 10501
     },
     {
       "destination": "yichao_v3_v9/.gitignore",
@@ -1072,6 +1477,6 @@
       "bytes": 1393
     }
   ],
-  "file_count": 214,
+  "file_count": 295,
   "excluded": "See source doc/github_upload_review_20260910/README.md; this manifest intentionally omits device copies, vendor, assets, environments, logs, and credentials."
 }
